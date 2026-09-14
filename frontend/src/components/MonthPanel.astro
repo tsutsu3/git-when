@@ -1,0 +1,18 @@
+<!-- Year by month heatmap. Year labels toggle the year filter. -->
+<div class="panel" id="p-month" role="tabpanel" aria-labelledby="tab-month" hidden>
+  <p class="panel-note" data-i18n="note.month"></p>
+  <div class="scroll year-rows">
+    <div class="mo" id="mo"></div>
+  </div>
+  <div class="legend" id="mo-legend"></div>
+</div>
+
+<style is:global>
+  .mo {
+    display: grid;
+    grid-template-columns: 58px repeat(12, minmax(24px, 44px)) 64px;
+    justify-content: start;
+    gap: 3px;
+    min-width: 440px;
+  }
+</style>

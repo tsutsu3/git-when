@@ -1,0 +1,247 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 394" role="img" aria-labelledby="title desc">
+<title id="title">git-when: Weekday × hour</title>
+<desc id="desc">author local time · 2024-01 to 2025-12 · 2209 commits · 4 repositories</desc>
+<metadata>
+git-when dev
+command: git-when src -f svg --scale log -o scale-log.svg
+time zone: author
+period: 2024-01 to 2025-12
+filters: bots excluded, merges excluded
+repository: head=2b40390bc59f9a7ff63fc757c10031d9583fb1c7 commits=179 name=notes/til
+repository: head=91c2fa6276c8f2b6ea4665566947241b46ad047a commits=545 name=oss/git-when
+repository: head=80639ee249d0faf0b38175e400ab2d3c827fa66c commits=808 name=work/api-server
+repository: head=c6d3018b12dbef9fbb9b07f48070f1e7f9f6c99a commits=677 name=work/frontend
+</metadata>
+<style>
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;font-size:12px;font-variant-numeric:tabular-nums}
+.h1{font-size:18px;font-weight:600}.h2{font-size:14px;font-weight:600}
+text{fill:#1f2328}.m{fill:#57606a}.bg{fill:#faf8f4}.rule{stroke:#c9cdd4}.z{fill:#ece8e1}
+.d1{fill:#ff875f}.d2{fill:#d75f00}.d3{fill:#af0000}.d4{fill:#5f0000}
+@media (prefers-color-scheme:dark){
+text{fill:#f0f3f6}.m{fill:#9da5ae}.bg{fill:#1f2328}.rule{stroke:#3d444d}.z{fill:#2d333b}
+.d1{fill:#af5f00}.d2{fill:#d7875f}.d3{fill:#ffaf5f}.d4{fill:#ffd7af}
+}
+</style>
+<rect class="bg" width="880" height="394"/>
+<text x="24" y="42" class="h1">git-when</text>
+<text x="24" y="60" class="m">author local time · 2024-01 to 2025-12 · 2209 commits · 4 repositories</text>
+<line x1="24" y1="74" x2="856" y2="74" class="rule"/>
+<text x="24" y="98" class="h2">Weekday × hour</text>
+<text x="68" y="118" text-anchor="middle" class="m">00</text>
+<text x="100" y="118" text-anchor="middle" class="m">01</text>
+<text x="132" y="118" text-anchor="middle" class="m">02</text>
+<text x="164" y="118" text-anchor="middle" class="m">03</text>
+<text x="196" y="118" text-anchor="middle" class="m">04</text>
+<text x="228" y="118" text-anchor="middle" class="m">05</text>
+<text x="260" y="118" text-anchor="middle" class="m">06</text>
+<text x="292" y="118" text-anchor="middle" class="m">07</text>
+<text x="324" y="118" text-anchor="middle" class="m">08</text>
+<text x="356" y="118" text-anchor="middle" class="m">09</text>
+<text x="388" y="118" text-anchor="middle" class="m">10</text>
+<text x="420" y="118" text-anchor="middle" class="m">11</text>
+<text x="452" y="118" text-anchor="middle" class="m">12</text>
+<text x="484" y="118" text-anchor="middle" class="m">13</text>
+<text x="516" y="118" text-anchor="middle" class="m">14</text>
+<text x="548" y="118" text-anchor="middle" class="m">15</text>
+<text x="580" y="118" text-anchor="middle" class="m">16</text>
+<text x="612" y="118" text-anchor="middle" class="m">17</text>
+<text x="644" y="118" text-anchor="middle" class="m">18</text>
+<text x="676" y="118" text-anchor="middle" class="m">19</text>
+<text x="708" y="118" text-anchor="middle" class="m">20</text>
+<text x="740" y="118" text-anchor="middle" class="m">21</text>
+<text x="772" y="118" text-anchor="middle" class="m">22</text>
+<text x="804" y="118" text-anchor="middle" class="m">23</text>
+<text x="24" y="139">Mon</text>
+<rect x="53" y="124" width="30" height="22" class="d1"><title>Mon 00: 1 commit</title></rect>
+<rect x="85" y="124" width="30" height="22" class="z"><title>Mon 01: 0 commits</title></rect>
+<rect x="117" y="124" width="30" height="22" class="z"><title>Mon 02: 0 commits</title></rect>
+<rect x="149" y="124" width="30" height="22" class="z"><title>Mon 03: 0 commits</title></rect>
+<rect x="181" y="124" width="30" height="22" class="z"><title>Mon 04: 0 commits</title></rect>
+<rect x="213" y="124" width="30" height="22" class="z"><title>Mon 05: 0 commits</title></rect>
+<rect x="245" y="124" width="30" height="22" class="z"><title>Mon 06: 0 commits</title></rect>
+<rect x="277" y="124" width="30" height="22" class="d2"><title>Mon 07: 4 commits</title></rect>
+<rect x="309" y="124" width="30" height="22" class="d2"><title>Mon 08: 9 commits</title></rect>
+<rect x="341" y="124" width="30" height="22" class="d4"><title>Mon 09: 24 commits</title></rect>
+<rect x="373" y="124" width="30" height="22" class="d4"><title>Mon 10: 49 commits</title></rect>
+<rect x="405" y="124" width="30" height="22" class="d4"><title>Mon 11: 53 commits</title></rect>
+<rect x="437" y="124" width="30" height="22" class="d3"><title>Mon 12: 16 commits</title></rect>
+<rect x="469" y="124" width="30" height="22" class="d4"><title>Mon 13: 31 commits</title></rect>
+<rect x="501" y="124" width="30" height="22" class="d4"><title>Mon 14: 39 commits</title></rect>
+<rect x="533" y="124" width="30" height="22" class="d4"><title>Mon 15: 55 commits</title></rect>
+<rect x="565" y="124" width="30" height="22" class="d4"><title>Mon 16: 40 commits</title></rect>
+<rect x="597" y="124" width="30" height="22" class="d4"><title>Mon 17: 24 commits</title></rect>
+<rect x="629" y="124" width="30" height="22" class="d3"><title>Mon 18: 17 commits</title></rect>
+<rect x="661" y="124" width="30" height="22" class="d1"><title>Mon 19: 3 commits</title></rect>
+<rect x="693" y="124" width="30" height="22" class="d2"><title>Mon 20: 8 commits</title></rect>
+<rect x="725" y="124" width="30" height="22" class="d3"><title>Mon 21: 15 commits</title></rect>
+<rect x="757" y="124" width="30" height="22" class="d3"><title>Mon 22: 13 commits</title></rect>
+<rect x="789" y="124" width="30" height="22" class="d2"><title>Mon 23: 5 commits</title></rect>
+<text x="850" y="139" text-anchor="end" class="m">406</text>
+<text x="24" y="163">Tue</text>
+<rect x="53" y="148" width="30" height="22" class="d2"><title>Tue 00: 4 commits</title></rect>
+<rect x="85" y="148" width="30" height="22" class="z"><title>Tue 01: 0 commits</title></rect>
+<rect x="117" y="148" width="30" height="22" class="z"><title>Tue 02: 0 commits</title></rect>
+<rect x="149" y="148" width="30" height="22" class="z"><title>Tue 03: 0 commits</title></rect>
+<rect x="181" y="148" width="30" height="22" class="d1"><title>Tue 04: 2 commits</title></rect>
+<rect x="213" y="148" width="30" height="22" class="z"><title>Tue 05: 0 commits</title></rect>
+<rect x="245" y="148" width="30" height="22" class="z"><title>Tue 06: 0 commits</title></rect>
+<rect x="277" y="148" width="30" height="22" class="d1"><title>Tue 07: 3 commits</title></rect>
+<rect x="309" y="148" width="30" height="22" class="d2"><title>Tue 08: 4 commits</title></rect>
+<rect x="341" y="148" width="30" height="22" class="d3"><title>Tue 09: 19 commits</title></rect>
+<rect x="373" y="148" width="30" height="22" class="d4"><title>Tue 10: 40 commits</title></rect>
+<rect x="405" y="148" width="30" height="22" class="d4"><title>Tue 11: 45 commits</title></rect>
+<rect x="437" y="148" width="30" height="22" class="d3"><title>Tue 12: 11 commits</title></rect>
+<rect x="469" y="148" width="30" height="22" class="d4"><title>Tue 13: 42 commits</title></rect>
+<rect x="501" y="148" width="30" height="22" class="d4"><title>Tue 14: 49 commits</title></rect>
+<rect x="533" y="148" width="30" height="22" class="d4"><title>Tue 15: 42 commits</title></rect>
+<rect x="565" y="148" width="30" height="22" class="d4"><title>Tue 16: 36 commits</title></rect>
+<rect x="597" y="148" width="30" height="22" class="d3"><title>Tue 17: 17 commits</title></rect>
+<rect x="629" y="148" width="30" height="22" class="d3"><title>Tue 18: 12 commits</title></rect>
+<rect x="661" y="148" width="30" height="22" class="d2"><title>Tue 19: 5 commits</title></rect>
+<rect x="693" y="148" width="30" height="22" class="d2"><title>Tue 20: 7 commits</title></rect>
+<rect x="725" y="148" width="30" height="22" class="d3"><title>Tue 21: 12 commits</title></rect>
+<rect x="757" y="148" width="30" height="22" class="d3"><title>Tue 22: 13 commits</title></rect>
+<rect x="789" y="148" width="30" height="22" class="d2"><title>Tue 23: 5 commits</title></rect>
+<text x="850" y="163" text-anchor="end" class="m">368</text>
+<text x="24" y="187">Wed</text>
+<rect x="53" y="172" width="30" height="22" class="d1"><title>Wed 00: 1 commit</title></rect>
+<rect x="85" y="172" width="30" height="22" class="z"><title>Wed 01: 0 commits</title></rect>
+<rect x="117" y="172" width="30" height="22" class="z"><title>Wed 02: 0 commits</title></rect>
+<rect x="149" y="172" width="30" height="22" class="z"><title>Wed 03: 0 commits</title></rect>
+<rect x="181" y="172" width="30" height="22" class="z"><title>Wed 04: 0 commits</title></rect>
+<rect x="213" y="172" width="30" height="22" class="z"><title>Wed 05: 0 commits</title></rect>
+<rect x="245" y="172" width="30" height="22" class="z"><title>Wed 06: 0 commits</title></rect>
+<rect x="277" y="172" width="30" height="22" class="d1"><title>Wed 07: 3 commits</title></rect>
+<rect x="309" y="172" width="30" height="22" class="d3"><title>Wed 08: 14 commits</title></rect>
+<rect x="341" y="172" width="30" height="22" class="d3"><title>Wed 09: 23 commits</title></rect>
+<rect x="373" y="172" width="30" height="22" class="d4"><title>Wed 10: 50 commits</title></rect>
+<rect x="405" y="172" width="30" height="22" class="d4"><title>Wed 11: 37 commits</title></rect>
+<rect x="437" y="172" width="30" height="22" class="d3"><title>Wed 12: 10 commits</title></rect>
+<rect x="469" y="172" width="30" height="22" class="d4"><title>Wed 13: 30 commits</title></rect>
+<rect x="501" y="172" width="30" height="22" class="d4"><title>Wed 14: 41 commits</title></rect>
+<rect x="533" y="172" width="30" height="22" class="d4"><title>Wed 15: 44 commits</title></rect>
+<rect x="565" y="172" width="30" height="22" class="d4"><title>Wed 16: 42 commits</title></rect>
+<rect x="597" y="172" width="30" height="22" class="d3"><title>Wed 17: 22 commits</title></rect>
+<rect x="629" y="172" width="30" height="22" class="d2"><title>Wed 18: 9 commits</title></rect>
+<rect x="661" y="172" width="30" height="22" class="d3"><title>Wed 19: 11 commits</title></rect>
+<rect x="693" y="172" width="30" height="22" class="d3"><title>Wed 20: 11 commits</title></rect>
+<rect x="725" y="172" width="30" height="22" class="d2"><title>Wed 21: 5 commits</title></rect>
+<rect x="757" y="172" width="30" height="22" class="d3"><title>Wed 22: 12 commits</title></rect>
+<rect x="789" y="172" width="30" height="22" class="d2"><title>Wed 23: 8 commits</title></rect>
+<text x="850" y="187" text-anchor="end" class="m">373</text>
+<text x="24" y="211">Thu</text>
+<rect x="53" y="196" width="30" height="22" class="d1"><title>Thu 00: 2 commits</title></rect>
+<rect x="85" y="196" width="30" height="22" class="d1"><title>Thu 01: 1 commit</title></rect>
+<rect x="117" y="196" width="30" height="22" class="z"><title>Thu 02: 0 commits</title></rect>
+<rect x="149" y="196" width="30" height="22" class="d1"><title>Thu 03: 1 commit</title></rect>
+<rect x="181" y="196" width="30" height="22" class="z"><title>Thu 04: 0 commits</title></rect>
+<rect x="213" y="196" width="30" height="22" class="z"><title>Thu 05: 0 commits</title></rect>
+<rect x="245" y="196" width="30" height="22" class="d1"><title>Thu 06: 1 commit</title></rect>
+<rect x="277" y="196" width="30" height="22" class="d1"><title>Thu 07: 2 commits</title></rect>
+<rect x="309" y="196" width="30" height="22" class="d2"><title>Thu 08: 6 commits</title></rect>
+<rect x="341" y="196" width="30" height="22" class="d4"><title>Thu 09: 29 commits</title></rect>
+<rect x="373" y="196" width="30" height="22" class="d4"><title>Thu 10: 41 commits</title></rect>
+<rect x="405" y="196" width="30" height="22" class="d4"><title>Thu 11: 56 commits</title></rect>
+<rect x="437" y="196" width="30" height="22" class="d3"><title>Thu 12: 19 commits</title></rect>
+<rect x="469" y="196" width="30" height="22" class="d4"><title>Thu 13: 30 commits</title></rect>
+<rect x="501" y="196" width="30" height="22" class="d4"><title>Thu 14: 29 commits</title></rect>
+<rect x="533" y="196" width="30" height="22" class="d4"><title>Thu 15: 46 commits</title></rect>
+<rect x="565" y="196" width="30" height="22" class="d4"><title>Thu 16: 29 commits</title></rect>
+<rect x="597" y="196" width="30" height="22" class="d3"><title>Thu 17: 20 commits</title></rect>
+<rect x="629" y="196" width="30" height="22" class="d3"><title>Thu 18: 11 commits</title></rect>
+<rect x="661" y="196" width="30" height="22" class="d1"><title>Thu 19: 3 commits</title></rect>
+<rect x="693" y="196" width="30" height="22" class="d3"><title>Thu 20: 11 commits</title></rect>
+<rect x="725" y="196" width="30" height="22" class="d3"><title>Thu 21: 18 commits</title></rect>
+<rect x="757" y="196" width="30" height="22" class="d3"><title>Thu 22: 14 commits</title></rect>
+<rect x="789" y="196" width="30" height="22" class="d2"><title>Thu 23: 9 commits</title></rect>
+<text x="850" y="211" text-anchor="end" class="m">378</text>
+<text x="24" y="235">Fri</text>
+<rect x="53" y="220" width="30" height="22" class="d3"><title>Fri 00: 10 commits</title></rect>
+<rect x="85" y="220" width="30" height="22" class="z"><title>Fri 01: 0 commits</title></rect>
+<rect x="117" y="220" width="30" height="22" class="z"><title>Fri 02: 0 commits</title></rect>
+<rect x="149" y="220" width="30" height="22" class="d1"><title>Fri 03: 1 commit</title></rect>
+<rect x="181" y="220" width="30" height="22" class="z"><title>Fri 04: 0 commits</title></rect>
+<rect x="213" y="220" width="30" height="22" class="z"><title>Fri 05: 0 commits</title></rect>
+<rect x="245" y="220" width="30" height="22" class="z"><title>Fri 06: 0 commits</title></rect>
+<rect x="277" y="220" width="30" height="22" class="d1"><title>Fri 07: 3 commits</title></rect>
+<rect x="309" y="220" width="30" height="22" class="d2"><title>Fri 08: 7 commits</title></rect>
+<rect x="341" y="220" width="30" height="22" class="d4"><title>Fri 09: 27 commits</title></rect>
+<rect x="373" y="220" width="30" height="22" class="d4"><title>Fri 10: 49 commits</title></rect>
+<rect x="405" y="220" width="30" height="22" class="d4"><title>Fri 11: 34 commits</title></rect>
+<rect x="437" y="220" width="30" height="22" class="d3"><title>Fri 12: 10 commits</title></rect>
+<rect x="469" y="220" width="30" height="22" class="d4"><title>Fri 13: 25 commits</title></rect>
+<rect x="501" y="220" width="30" height="22" class="d4"><title>Fri 14: 35 commits</title></rect>
+<rect x="533" y="220" width="30" height="22" class="d4"><title>Fri 15: 46 commits</title></rect>
+<rect x="565" y="220" width="30" height="22" class="d4"><title>Fri 16: 28 commits</title></rect>
+<rect x="597" y="220" width="30" height="22" class="d3"><title>Fri 17: 21 commits</title></rect>
+<rect x="629" y="220" width="30" height="22" class="d2"><title>Fri 18: 9 commits</title></rect>
+<rect x="661" y="220" width="30" height="22" class="d2"><title>Fri 19: 5 commits</title></rect>
+<rect x="693" y="220" width="30" height="22" class="d2"><title>Fri 20: 7 commits</title></rect>
+<rect x="725" y="220" width="30" height="22" class="d3"><title>Fri 21: 17 commits</title></rect>
+<rect x="757" y="220" width="30" height="22" class="d3"><title>Fri 22: 18 commits</title></rect>
+<rect x="789" y="220" width="30" height="22" class="d3"><title>Fri 23: 12 commits</title></rect>
+<text x="850" y="235" text-anchor="end" class="m">364</text>
+<text x="24" y="259">Sat</text>
+<rect x="53" y="244" width="30" height="22" class="z"><title>Sat 00: 0 commits</title></rect>
+<rect x="85" y="244" width="30" height="22" class="d1"><title>Sat 01: 1 commit</title></rect>
+<rect x="117" y="244" width="30" height="22" class="z"><title>Sat 02: 0 commits</title></rect>
+<rect x="149" y="244" width="30" height="22" class="z"><title>Sat 03: 0 commits</title></rect>
+<rect x="181" y="244" width="30" height="22" class="z"><title>Sat 04: 0 commits</title></rect>
+<rect x="213" y="244" width="30" height="22" class="z"><title>Sat 05: 0 commits</title></rect>
+<rect x="245" y="244" width="30" height="22" class="z"><title>Sat 06: 0 commits</title></rect>
+<rect x="277" y="244" width="30" height="22" class="d1"><title>Sat 07: 2 commits</title></rect>
+<rect x="309" y="244" width="30" height="22" class="d2"><title>Sat 08: 5 commits</title></rect>
+<rect x="341" y="244" width="30" height="22" class="d2"><title>Sat 09: 6 commits</title></rect>
+<rect x="373" y="244" width="30" height="22" class="d3"><title>Sat 10: 12 commits</title></rect>
+<rect x="405" y="244" width="30" height="22" class="d4"><title>Sat 11: 24 commits</title></rect>
+<rect x="437" y="244" width="30" height="22" class="d3"><title>Sat 12: 21 commits</title></rect>
+<rect x="469" y="244" width="30" height="22" class="d3"><title>Sat 13: 20 commits</title></rect>
+<rect x="501" y="244" width="30" height="22" class="d3"><title>Sat 14: 19 commits</title></rect>
+<rect x="533" y="244" width="30" height="22" class="d4"><title>Sat 15: 24 commits</title></rect>
+<rect x="565" y="244" width="30" height="22" class="d3"><title>Sat 16: 18 commits</title></rect>
+<rect x="597" y="244" width="30" height="22" class="d3"><title>Sat 17: 13 commits</title></rect>
+<rect x="629" y="244" width="30" height="22" class="d3"><title>Sat 18: 10 commits</title></rect>
+<rect x="661" y="244" width="30" height="22" class="d2"><title>Sat 19: 5 commits</title></rect>
+<rect x="693" y="244" width="30" height="22" class="d1"><title>Sat 20: 1 commit</title></rect>
+<rect x="725" y="244" width="30" height="22" class="z"><title>Sat 21: 0 commits</title></rect>
+<rect x="757" y="244" width="30" height="22" class="z"><title>Sat 22: 0 commits</title></rect>
+<rect x="789" y="244" width="30" height="22" class="z"><title>Sat 23: 0 commits</title></rect>
+<text x="850" y="259" text-anchor="end" class="m">181</text>
+<text x="24" y="283">Sun</text>
+<rect x="53" y="268" width="30" height="22" class="z"><title>Sun 00: 0 commits</title></rect>
+<rect x="85" y="268" width="30" height="22" class="z"><title>Sun 01: 0 commits</title></rect>
+<rect x="117" y="268" width="30" height="22" class="z"><title>Sun 02: 0 commits</title></rect>
+<rect x="149" y="268" width="30" height="22" class="z"><title>Sun 03: 0 commits</title></rect>
+<rect x="181" y="268" width="30" height="22" class="z"><title>Sun 04: 0 commits</title></rect>
+<rect x="213" y="268" width="30" height="22" class="z"><title>Sun 05: 0 commits</title></rect>
+<rect x="245" y="268" width="30" height="22" class="z"><title>Sun 06: 0 commits</title></rect>
+<rect x="277" y="268" width="30" height="22" class="d1"><title>Sun 07: 1 commit</title></rect>
+<rect x="309" y="268" width="30" height="22" class="d2"><title>Sun 08: 6 commits</title></rect>
+<rect x="341" y="268" width="30" height="22" class="d2"><title>Sun 09: 7 commits</title></rect>
+<rect x="373" y="268" width="30" height="22" class="d3"><title>Sun 10: 11 commits</title></rect>
+<rect x="405" y="268" width="30" height="22" class="d2"><title>Sun 11: 7 commits</title></rect>
+<rect x="437" y="268" width="30" height="22" class="d3"><title>Sun 12: 12 commits</title></rect>
+<rect x="469" y="268" width="30" height="22" class="d3"><title>Sun 13: 19 commits</title></rect>
+<rect x="501" y="268" width="30" height="22" class="d4"><title>Sun 14: 26 commits</title></rect>
+<rect x="533" y="268" width="30" height="22" class="d3"><title>Sun 15: 14 commits</title></rect>
+<rect x="565" y="268" width="30" height="22" class="d3"><title>Sun 16: 10 commits</title></rect>
+<rect x="597" y="268" width="30" height="22" class="d3"><title>Sun 17: 14 commits</title></rect>
+<rect x="629" y="268" width="30" height="22" class="d2"><title>Sun 18: 9 commits</title></rect>
+<rect x="661" y="268" width="30" height="22" class="d1"><title>Sun 19: 1 commit</title></rect>
+<rect x="693" y="268" width="30" height="22" class="d1"><title>Sun 20: 1 commit</title></rect>
+<rect x="725" y="268" width="30" height="22" class="d1"><title>Sun 21: 1 commit</title></rect>
+<rect x="757" y="268" width="30" height="22" class="z"><title>Sun 22: 0 commits</title></rect>
+<rect x="789" y="268" width="30" height="22" class="z"><title>Sun 23: 0 commits</title></rect>
+<text x="850" y="283" text-anchor="end" class="m">139</text>
+<text x="24" y="318" class="m">log scale · max 56 at Thu 11 · empty cells = 0</text>
+<rect x="24" y="328" width="12" height="12" class="d1"/>
+<text x="40" y="338" class="m">1+</text>
+<rect x="70" y="328" width="12" height="12" class="d2"/>
+<text x="86" y="338" class="m">4+</text>
+<rect x="116" y="328" width="12" height="12" class="d3"/>
+<text x="132" y="338" class="m">10+</text>
+<rect x="169" y="328" width="12" height="12" class="d4"/>
+<text x="185" y="338" class="m">24+</text>
+<line x1="24" y1="348" x2="856" y2="348" class="rule"/>
+<text x="24" y="370" class="m">git-when dev · 4 repositories</text>
+</svg>

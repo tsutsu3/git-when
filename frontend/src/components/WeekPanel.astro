@@ -1,0 +1,140 @@
+<!-- Weekday and weekend hourly bars on each side of the hour column, with the weekend index. -->
+<div class="panel" id="p-week" role="tabpanel" aria-labelledby="tab-week" hidden>
+  <p class="panel-note" data-i18n="note.week"></p>
+  <div class="wk-head">
+    <div class="l" id="wk-left-head"></div>
+    <div></div>
+    <div id="wk-right-head"></div>
+  </div>
+  <div id="wk-rows"></div>
+  <div class="wk-total" id="wk-total"></div>
+  <div class="index-card" id="wk-index"></div>
+</div>
+
+<style is:global>
+  .wk-head,
+  .wk-row,
+  .wk-total {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr);
+    align-items: center;
+    column-gap: 12px;
+  }
+  .wk-head {
+    padding-bottom: 8px;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+  }
+  .wk-head .l,
+  .wk-total .l {
+    text-align: right;
+  }
+  .wk-row {
+    height: 20px;
+    border-radius: 3px;
+  }
+  .wk-row:hover {
+    background: var(--sunk);
+  }
+  .wk-row .hr {
+    color: var(--ink-faint);
+    font-size: 11px;
+    text-align: center;
+  }
+  .wk-side {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    height: 12px;
+  }
+  .wk-side.left {
+    flex-direction: row-reverse;
+  }
+  .wk-side .bar {
+    height: 12px;
+    border-radius: 2px;
+    background: var(--bar);
+  }
+  .wk-side .v {
+    color: var(--ink-soft);
+    font-size: 11px;
+    white-space: nowrap;
+  }
+  .wk-total {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid var(--rule-hair);
+    font-size: 13px;
+  }
+  .wk-total b {
+    font-weight: 650;
+  }
+  .wk-total span {
+    color: var(--ink-faint);
+  }
+
+  .index-card {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    gap: 6px 22px;
+    margin-top: 20px;
+    padding: 16px 18px;
+    border-radius: 10px;
+    background: var(--sunk);
+  }
+  .index-card .big {
+    font-size: 30px;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .index-card .big small {
+    display: block;
+    margin-top: 6px;
+    color: var(--ink-soft);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0;
+  }
+  .index-card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    line-height: 1.65;
+  }
+  .gauge {
+    grid-column: 1 / -1;
+    margin-top: 6px;
+  }
+  .gauge-track {
+    position: relative;
+    height: 8px;
+    border-radius: 4px;
+    background: var(--rule-hair);
+  }
+  .gauge-track .fill {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    border-radius: 4px;
+    background: var(--bar);
+  }
+  .gauge-track .ref {
+    position: absolute;
+    top: -4px;
+    bottom: -4px;
+    left: 50%;
+    width: 2px;
+    margin-left: -1px;
+    background: var(--ink-soft);
+  }
+  .gauge-scale {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    color: var(--ink-faint);
+    font-size: 11px;
+  }
+</style>

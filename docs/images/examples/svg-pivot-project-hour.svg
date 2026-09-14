@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 316" role="img" aria-labelledby="title desc">
+<title id="title">git-when: Repository × hour</title>
+<desc id="desc">author local time · 2024-01 to 2025-12 · 2209 commits · 4 repositories</desc>
+<metadata>
+git-when dev
+command: git-when src -f svg -p project/hour --min-total 200 -o pivot-project-hour.svg
+time zone: author
+period: 2024-01 to 2025-12
+filters: bots excluded, merges excluded
+repository: head=2b40390bc59f9a7ff63fc757c10031d9583fb1c7 commits=179 name=notes/til
+repository: head=91c2fa6276c8f2b6ea4665566947241b46ad047a commits=545 name=oss/git-when
+repository: head=80639ee249d0faf0b38175e400ab2d3c827fa66c commits=808 name=work/api-server
+repository: head=c6d3018b12dbef9fbb9b07f48070f1e7f9f6c99a commits=677 name=work/frontend
+</metadata>
+<style>
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;font-size:12px;font-variant-numeric:tabular-nums}
+.h1{font-size:18px;font-weight:600}.h2{font-size:14px;font-weight:600}
+text{fill:#1f2328}.m{fill:#57606a}.bg{fill:#faf8f4}.rule{stroke:#c9cdd4}.z{fill:#ece8e1}
+.d1{fill:#ff875f}.d2{fill:#d75f00}.d3{fill:#af0000}.d4{fill:#5f0000}
+@media (prefers-color-scheme:dark){
+text{fill:#f0f3f6}.m{fill:#9da5ae}.bg{fill:#1f2328}.rule{stroke:#3d444d}.z{fill:#2d333b}
+.d1{fill:#af5f00}.d2{fill:#d7875f}.d3{fill:#ffaf5f}.d4{fill:#ffd7af}
+}
+</style>
+<rect class="bg" width="880" height="316"/>
+<text x="24" y="42" class="h1">git-when</text>
+<text x="24" y="60" class="m">author local time · 2024-01 to 2025-12 · 2209 commits · 4 repositories</text>
+<line x1="24" y1="74" x2="856" y2="74" class="rule"/>
+<text x="24" y="98" class="h2">Repository × hour</text>
+<text x="150" y="118" text-anchor="middle" class="m">00</text>
+<text x="178" y="118" text-anchor="middle" class="m">01</text>
+<text x="206" y="118" text-anchor="middle" class="m">02</text>
+<text x="234" y="118" text-anchor="middle" class="m">03</text>
+<text x="262" y="118" text-anchor="middle" class="m">04</text>
+<text x="290" y="118" text-anchor="middle" class="m">05</text>
+<text x="318" y="118" text-anchor="middle" class="m">06</text>
+<text x="346" y="118" text-anchor="middle" class="m">07</text>
+<text x="374" y="118" text-anchor="middle" class="m">08</text>
+<text x="402" y="118" text-anchor="middle" class="m">09</text>
+<text x="430" y="118" text-anchor="middle" class="m">10</text>
+<text x="458" y="118" text-anchor="middle" class="m">11</text>
+<text x="486" y="118" text-anchor="middle" class="m">12</text>
+<text x="514" y="118" text-anchor="middle" class="m">13</text>
+<text x="542" y="118" text-anchor="middle" class="m">14</text>
+<text x="570" y="118" text-anchor="middle" class="m">15</text>
+<text x="598" y="118" text-anchor="middle" class="m">16</text>
+<text x="626" y="118" text-anchor="middle" class="m">17</text>
+<text x="654" y="118" text-anchor="middle" class="m">18</text>
+<text x="682" y="118" text-anchor="middle" class="m">19</text>
+<text x="710" y="118" text-anchor="middle" class="m">20</text>
+<text x="738" y="118" text-anchor="middle" class="m">21</text>
+<text x="766" y="118" text-anchor="middle" class="m">22</text>
+<text x="794" y="118" text-anchor="middle" class="m">23</text>
+<text x="24" y="139">oss/git-when</text>
+<rect x="137" y="124" width="26" height="22" class="d2"><title>oss/git-when 00: 18 commits</title></rect>
+<rect x="165" y="124" width="26" height="22" class="d1"><title>oss/git-when 01: 2 commits</title></rect>
+<rect x="193" y="124" width="26" height="22" class="z"><title>oss/git-when 02: 0 commits</title></rect>
+<rect x="221" y="124" width="26" height="22" class="z"><title>oss/git-when 03: 0 commits</title></rect>
+<rect x="249" y="124" width="26" height="22" class="d1"><title>oss/git-when 04: 1 commit</title></rect>
+<rect x="277" y="124" width="26" height="22" class="z"><title>oss/git-when 05: 0 commits</title></rect>
+<rect x="305" y="124" width="26" height="22" class="z"><title>oss/git-when 06: 0 commits</title></rect>
+<rect x="333" y="124" width="26" height="22" class="d1"><title>oss/git-when 07: 3 commits</title></rect>
+<rect x="361" y="124" width="26" height="22" class="d1"><title>oss/git-when 08: 11 commits</title></rect>
+<rect x="389" y="124" width="26" height="22" class="d2"><title>oss/git-when 09: 12 commits</title></rect>
+<rect x="417" y="124" width="26" height="22" class="d2"><title>oss/git-when 10: 23 commits</title></rect>
+<rect x="445" y="124" width="26" height="22" class="d2"><title>oss/git-when 11: 30 commits</title></rect>
+<rect x="473" y="124" width="26" height="22" class="d2"><title>oss/git-when 12: 31 commits</title></rect>
+<rect x="501" y="124" width="26" height="22" class="d3"><title>oss/git-when 13: 36 commits</title></rect>
+<rect x="529" y="124" width="26" height="22" class="d3"><title>oss/git-when 14: 42 commits</title></rect>
+<rect x="557" y="124" width="26" height="22" class="d2"><title>oss/git-when 15: 34 commits</title></rect>
+<rect x="585" y="124" width="26" height="22" class="d2"><title>oss/git-when 16: 27 commits</title></rect>
+<rect x="613" y="124" width="26" height="22" class="d2"><title>oss/git-when 17: 25 commits</title></rect>
+<rect x="641" y="124" width="26" height="22" class="d2"><title>oss/git-when 18: 19 commits</title></rect>
+<rect x="669" y="124" width="26" height="22" class="d2"><title>oss/git-when 19: 13 commits</title></rect>
+<rect x="697" y="124" width="26" height="22" class="d3"><title>oss/git-when 20: 42 commits</title></rect>
+<rect x="725" y="124" width="26" height="22" class="d3"><title>oss/git-when 21: 67 commits</title></rect>
+<rect x="753" y="124" width="26" height="22" class="d4"><title>oss/git-when 22: 70 commits</title></rect>
+<rect x="781" y="124" width="26" height="22" class="d3"><title>oss/git-when 23: 39 commits</title></rect>
+<text x="838" y="139" text-anchor="end" class="m">545</text>
+<text x="24" y="163">work/api-server</text>
+<rect x="137" y="148" width="26" height="22" class="z"><title>work/api-server 00: 0 commits</title></rect>
+<rect x="165" y="148" width="26" height="22" class="z"><title>work/api-server 01: 0 commits</title></rect>
+<rect x="193" y="148" width="26" height="22" class="z"><title>work/api-server 02: 0 commits</title></rect>
+<rect x="221" y="148" width="26" height="22" class="d1"><title>work/api-server 03: 2 commits</title></rect>
+<rect x="249" y="148" width="26" height="22" class="z"><title>work/api-server 04: 0 commits</title></rect>
+<rect x="277" y="148" width="26" height="22" class="z"><title>work/api-server 05: 0 commits</title></rect>
+<rect x="305" y="148" width="26" height="22" class="z"><title>work/api-server 06: 0 commits</title></rect>
+<rect x="333" y="148" width="26" height="22" class="d1"><title>work/api-server 07: 9 commits</title></rect>
+<rect x="361" y="148" width="26" height="22" class="d2"><title>work/api-server 08: 20 commits</title></rect>
+<rect x="389" y="148" width="26" height="22" class="d3"><title>work/api-server 09: 61 commits</title></rect>
+<rect x="417" y="148" width="26" height="22" class="d4"><title>work/api-server 10: 108 commits</title></rect>
+<rect x="445" y="148" width="26" height="22" class="d4"><title>work/api-server 11: 116 commits</title></rect>
+<rect x="473" y="148" width="26" height="22" class="d2"><title>work/api-server 12: 34 commits</title></rect>
+<rect x="501" y="148" width="26" height="22" class="d4"><title>work/api-server 13: 88 commits</title></rect>
+<rect x="529" y="148" width="26" height="22" class="d4"><title>work/api-server 14: 95 commits</title></rect>
+<rect x="557" y="148" width="26" height="22" class="d4"><title>work/api-server 15: 104 commits</title></rect>
+<rect x="585" y="148" width="26" height="22" class="d4"><title>work/api-server 16: 83 commits</title></rect>
+<rect x="613" y="148" width="26" height="22" class="d3"><title>work/api-server 17: 54 commits</title></rect>
+<rect x="641" y="148" width="26" height="22" class="d2"><title>work/api-server 18: 23 commits</title></rect>
+<rect x="669" y="148" width="26" height="22" class="d1"><title>work/api-server 19: 11 commits</title></rect>
+<rect x="697" y="148" width="26" height="22" class="z"><title>work/api-server 20: 0 commits</title></rect>
+<rect x="725" y="148" width="26" height="22" class="z"><title>work/api-server 21: 0 commits</title></rect>
+<rect x="753" y="148" width="26" height="22" class="z"><title>work/api-server 22: 0 commits</title></rect>
+<rect x="781" y="148" width="26" height="22" class="z"><title>work/api-server 23: 0 commits</title></rect>
+<text x="838" y="163" text-anchor="end" class="m">808</text>
+<text x="24" y="187">work/frontend</text>
+<rect x="137" y="172" width="26" height="22" class="z"><title>work/frontend 00: 0 commits</title></rect>
+<rect x="165" y="172" width="26" height="22" class="z"><title>work/frontend 01: 0 commits</title></rect>
+<rect x="193" y="172" width="26" height="22" class="z"><title>work/frontend 02: 0 commits</title></rect>
+<rect x="221" y="172" width="26" height="22" class="z"><title>work/frontend 03: 0 commits</title></rect>
+<rect x="249" y="172" width="26" height="22" class="d1"><title>work/frontend 04: 1 commit</title></rect>
+<rect x="277" y="172" width="26" height="22" class="z"><title>work/frontend 05: 0 commits</title></rect>
+<rect x="305" y="172" width="26" height="22" class="d1"><title>work/frontend 06: 1 commit</title></rect>
+<rect x="333" y="172" width="26" height="22" class="d1"><title>work/frontend 07: 6 commits</title></rect>
+<rect x="361" y="172" width="26" height="22" class="d2"><title>work/frontend 08: 14 commits</title></rect>
+<rect x="389" y="172" width="26" height="22" class="d3"><title>work/frontend 09: 49 commits</title></rect>
+<rect x="417" y="172" width="26" height="22" class="d4"><title>work/frontend 10: 98 commits</title></rect>
+<rect x="445" y="172" width="26" height="22" class="d4"><title>work/frontend 11: 97 commits</title></rect>
+<rect x="473" y="172" width="26" height="22" class="d2"><title>work/frontend 12: 28 commits</title></rect>
+<rect x="501" y="172" width="26" height="22" class="d3"><title>work/frontend 13: 54 commits</title></rect>
+<rect x="529" y="172" width="26" height="22" class="d4"><title>work/frontend 14: 72 commits</title></rect>
+<rect x="557" y="172" width="26" height="22" class="d4"><title>work/frontend 15: 105 commits</title></rect>
+<rect x="585" y="172" width="26" height="22" class="d4"><title>work/frontend 16: 75 commits</title></rect>
+<rect x="613" y="172" width="26" height="22" class="d3"><title>work/frontend 17: 37 commits</title></rect>
+<rect x="641" y="172" width="26" height="22" class="d2"><title>work/frontend 18: 29 commits</title></rect>
+<rect x="669" y="172" width="26" height="22" class="d1"><title>work/frontend 19: 6 commits</title></rect>
+<rect x="697" y="172" width="26" height="22" class="d1"><title>work/frontend 20: 4 commits</title></rect>
+<rect x="725" y="172" width="26" height="22" class="d1"><title>work/frontend 21: 1 commit</title></rect>
+<rect x="753" y="172" width="26" height="22" class="z"><title>work/frontend 22: 0 commits</title></rect>
+<rect x="781" y="172" width="26" height="22" class="z"><title>work/frontend 23: 0 commits</title></rect>
+<text x="838" y="187" text-anchor="end" class="m">677</text>
+<text x="24" y="222" class="m">sqrt scale · max 116 at work/api-server 11 · empty cells = 0</text>
+<rect x="24" y="232" width="12" height="12" class="d1"/>
+<text x="40" y="242" class="m">1+</text>
+<rect x="70" y="232" width="12" height="12" class="d2"/>
+<text x="86" y="242" class="m">12+</text>
+<rect x="123" y="232" width="12" height="12" class="d3"/>
+<text x="139" y="242" class="m">35+</text>
+<rect x="176" y="232" width="12" height="12" class="d4"/>
+<text x="192" y="242" class="m">70+</text>
+<text x="24" y="260" class="m">1 of 4 project rows hidden: fewer than 200 commits</text>
+<line x1="24" y1="270" x2="856" y2="270" class="rule"/>
+<text x="24" y="292" class="m">git-when dev · 4 repositories</text>
+</svg>

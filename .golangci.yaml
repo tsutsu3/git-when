@@ -1,0 +1,43 @@
+version: "2"
+
+run:
+  timeout: 5m
+
+linters:
+  default: standard
+  enable:
+    - bodyclose
+    - copyloopvar
+    - errorlint
+    - funcorder
+    - gocritic
+    - gosec
+    - misspell
+    - nilerr
+    - noctx
+    - revive
+    - unconvert
+    - unparam
+    - usetesting
+    - wastedassign
+  exclusions:
+    paths:
+      - tmp
+    presets:
+      - comments
+      - std-error-handling
+
+formatters:
+  enable:
+    - gofumpt
+    - goimports
+    - golines
+  exclusions:
+    paths:
+      - tmp
+  settings:
+    goimports:
+      local-prefixes:
+        - github.com/tsutsu3/git-when
+    golines:
+      max-len: 100

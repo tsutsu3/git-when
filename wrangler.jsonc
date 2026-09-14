@@ -1,0 +1,28 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "git-when-demo",
+  "compatibility_date": "2026-09-05",
+  "assets": {
+    "directory": "public",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page",
+  },
+
+  "env": {
+    "prd": {
+      "name": "git-when-demo-prd",
+      "workers_dev": false,
+      "routes": [
+        {
+          "pattern": "git-when.tsutsu3.com",
+          "custom_domain": true,
+        },
+      ],
+    },
+    "dev": {
+      "name": "git-when-demo-dev",
+      "workers_dev": true,
+      "routes": [],
+    },
+  },
+}

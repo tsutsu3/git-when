@@ -1,0 +1,58 @@
+<!-- One column of hourly bars per weekday, all on one scale. -->
+<div class="panel" id="p-weekday-hours" role="tabpanel" aria-labelledby="tab-weekday-hours" hidden>
+  <p class="panel-note" data-i18n="note.weekday-hours"></p>
+  <div class="scroll">
+    <div class="wh" id="wh"></div>
+  </div>
+</div>
+
+<style is:global>
+  .wh {
+    display: grid;
+    grid-template-columns: 30px repeat(7, minmax(80px, 1fr));
+    column-gap: 12px;
+    min-width: 660px;
+  }
+  .wh .head {
+    padding-bottom: 8px;
+    color: var(--ink-soft);
+    font-size: 12px;
+  }
+  .wh .head b {
+    display: block;
+    color: var(--ink);
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .wh .hr {
+    color: var(--ink-faint);
+    font-size: 11px;
+    line-height: 18px;
+    text-align: right;
+  }
+  .bar-cell {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 18px;
+    border-radius: 3px;
+  }
+  .bar-cell:hover {
+    background: var(--sunk);
+  }
+  .bar-cell .bar {
+    flex: 0 0 auto;
+    height: 10px;
+    border-radius: 2px;
+    background: var(--bar);
+  }
+  .bar-cell .v {
+    color: var(--ink-soft);
+    font-size: 11px;
+    white-space: nowrap;
+    opacity: 0;
+  }
+  .bar-cell:hover .v {
+    opacity: 1;
+  }
+</style>

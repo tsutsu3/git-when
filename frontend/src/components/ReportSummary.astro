@@ -1,0 +1,64 @@
+<!-- Current selection, summary sentence, and computed KPIs. -->
+<p class="context" id="context"></p>
+<p class="lede" id="lede"></p>
+
+<section class="kpis" id="kpis" data-i18n-attr="aria-label:overview"></section>
+
+<style is:global>
+  .context {
+    min-height: 1.5em;
+    margin: 0 0 6px;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  .context b {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .lede {
+    max-width: 62ch;
+    min-height: 1.4em;
+    margin: 0 0 20px;
+    font-size: 22px;
+    line-height: 1.4;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .lede b {
+    font-weight: 650;
+  }
+
+  .kpis {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+    gap: 12px;
+    min-height: 101px;
+    margin-bottom: 18px;
+  }
+  .kpi,
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--rule-hair);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+  }
+  .kpi {
+    padding: 14px 16px 13px;
+  }
+  .kpi-label {
+    color: var(--ink-soft);
+    font-size: 12px;
+  }
+  .kpi-value {
+    margin-top: 3px;
+    font-size: 25px;
+    font-weight: 650;
+    letter-spacing: -0.015em;
+    line-height: 1.2;
+  }
+  .kpi-sub {
+    margin-top: 3px;
+    color: var(--ink-faint);
+    font-size: 12px;
+  }
+</style>

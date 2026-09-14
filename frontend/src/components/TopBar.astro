@@ -1,0 +1,326 @@
+---
+import logo from "../assets/git-when-logo.svg?raw";
+---
+
+<!-- Global controls: sidebar, filters, language, theme, and the GitHub link. -->
+<header class="topbar">
+  <div class="topbar-inner">
+    <button
+      class="icon-btn"
+      id="side-toggle"
+      type="button"
+      aria-controls="roster-nav"
+      aria-expanded="true"
+    >
+      <svg class="ico-expand" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+        <rect
+          x="2.5"
+          y="3.5"
+          width="15"
+          height="13"
+          rx="2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        ></rect>
+        <path
+          d="M7.5 3.5v13M11 8l2 2-2 2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+      <svg class="ico-collapse" viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+        <rect
+          x="2.5"
+          y="3.5"
+          width="15"
+          height="13"
+          rx="2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        ></rect>
+        <path
+          d="M7.5 3.5v13M13 8l-2 2 2 2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </button>
+    <div class="brand">
+      <span class="brand-logo" aria-hidden="true" set:html={logo} />
+      <h1>git-when</h1>
+    </div>
+    <div class="filters">
+      <!-- On wide screens the filters sit at the right edge, so the button appears on the left and the selects stay in place. -->
+      <button class="chip" id="reset" type="button" data-i18n="reset" hidden>
+        Clear filters
+      </button>
+      <label class="field">
+        <span data-i18n="author">Author</span>
+        <select id="author"></select>
+      </label>
+      <label class="field">
+        <span data-i18n="period">Period</span>
+        <select id="year"></select>
+      </label>
+    </div>
+    <div class="settings">
+      <div class="seg" role="group" id="lang-group" data-i18n-attr="aria-label:langGroup">
+        <button type="button" data-lang-choice="en" aria-label="English" aria-pressed="true">
+          EN
+        </button>
+        <button type="button" data-lang-choice="ja" aria-label="JA 日本語" aria-pressed="false">
+          JA
+        </button>
+      </div>
+      <div class="seg" role="group" id="theme-group" data-i18n-attr="aria-label:themeGroup">
+        <button
+          type="button"
+          data-theme-choice="system"
+          aria-pressed="true"
+          data-i18n-attr="aria-label:theme.system;title:theme.system"
+        >
+          <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+            <rect
+              x="2.5"
+              y="3.5"
+              width="15"
+              height="10"
+              rx="1.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            ></rect>
+            <path
+              d="M7 17h6M10 13.5V17"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            ></path>
+          </svg>
+        </button>
+        <button
+          type="button"
+          data-theme-choice="light"
+          aria-pressed="false"
+          data-i18n-attr="aria-label:theme.light;title:theme.light"
+        >
+          <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+            <circle
+              cx="10"
+              cy="10"
+              r="3.5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            ></circle>
+            <path
+              d="M10 2v2.2M10 15.8V18M2 10h2.2M15.8 10H18M4.3 4.3l1.6 1.6M14.1 14.1l1.6 1.6M4.3 15.7l1.6-1.6M14.1 5.9l1.6-1.6"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+            ></path>
+          </svg>
+        </button>
+        <button
+          type="button"
+          data-theme-choice="dark"
+          aria-pressed="false"
+          data-i18n-attr="aria-label:theme.dark;title:theme.dark"
+        >
+          <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true">
+            <path
+              d="M16 12.6A6.6 6.6 0 0 1 7.4 4a6.6 6.6 0 1 0 8.6 8.6z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <!-- git-when --no-github-link hides this link. A link loads nothing until the viewer follows it. -->
+      <a
+        class="icon-btn ghost"
+        id="github-link"
+        href="https://github.com/tsutsu3/git-when"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n-attr="aria-label:githubLink;title:githubLink"
+      >
+        <svg viewBox="0 0 16 16" width="18" height="18" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+          ></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</header>
+
+<style is:global>
+  .topbar {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--paper);
+    background: color-mix(in srgb, var(--paper) 90%, transparent);
+    backdrop-filter: saturate(1.4) blur(10px);
+    border-bottom: 1px solid var(--rule-hair);
+  }
+  .topbar-inner {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: var(--page-max);
+    min-height: 60px;
+    margin: 0 auto;
+    padding: 10px 20px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-right: 6px;
+    white-space: nowrap;
+  }
+  /* The logo file is 64px. CSS sizes override its width and height attributes. */
+  .brand-logo {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+  .brand-logo svg {
+    width: 28px;
+    height: 28px;
+  }
+  .brand h1 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 650;
+    letter-spacing: -0.01em;
+  }
+
+  .icon-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    flex: 0 0 auto;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--ink-soft);
+    cursor: pointer;
+  }
+  .icon-btn:hover {
+    color: var(--ink);
+    border-color: var(--ink-faint);
+  }
+  .icon-btn.ghost {
+    border-color: transparent;
+    background: none;
+  }
+  .icon-btn.ghost:hover {
+    background: var(--sunk);
+  }
+  /* .icon-btn sets display, so the hidden attribute needs its own rule. */
+  .icon-btn[hidden] {
+    display: none;
+  }
+  /* One toggle button shows the close icon while the list is open and the open icon while it is closed. */
+  #side-toggle[aria-expanded="true"] .ico-expand,
+  #side-toggle[aria-expanded="false"] .ico-collapse {
+    display: none;
+  }
+  #side-collapse {
+    display: none;
+  } /* Shown only in the narrow screen sheet. */
+
+  .filters {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+    margin-left: auto;
+  }
+  .field {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+  .field select {
+    height: 34px;
+    min-width: 0;
+    max-width: 240px;
+    padding: 0 28px 0 10px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: var(--surface);
+    color: var(--ink);
+    font-size: 13px;
+  }
+  .chip {
+    height: 30px;
+    padding: 0 12px;
+    border: 0;
+    border-radius: 999px;
+    background: var(--sunk);
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .chip:hover {
+    color: var(--ink);
+  }
+
+  .settings {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .seg {
+    display: inline-flex;
+    padding: 2px;
+    border: 1px solid var(--rule);
+    border-radius: 9px;
+    background: var(--surface);
+  }
+  .seg button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 30px;
+    height: 28px;
+    padding: 0 7px;
+    border: 0;
+    border-radius: 7px;
+    background: none;
+    color: var(--ink-faint);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .seg button:hover {
+    color: var(--ink);
+  }
+  .seg button[aria-pressed="true"] {
+    background: var(--sunk);
+    color: var(--ink);
+    box-shadow: inset 0 0 0 1px var(--rule);
+  }
+</style>

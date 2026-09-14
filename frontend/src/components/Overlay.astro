@@ -1,0 +1,35 @@
+<!-- Mobile sidebar backdrop and the shared chart tooltip. -->
+<div class="sheet-backdrop" id="sheet-backdrop" hidden></div>
+
+<div id="tip" role="status" aria-live="polite"></div>
+
+<style is:global>
+  #tip {
+    position: fixed;
+    z-index: 40;
+    padding: 7px 10px;
+    border-radius: 8px;
+    background: var(--tip-bg);
+    color: var(--tip-ink);
+    font-size: 12px;
+    line-height: 1.5;
+    white-space: nowrap;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 70ms ease;
+  }
+  #tip.on {
+    opacity: 1;
+  }
+  #tip .k {
+    opacity: 0.65;
+  }
+
+  .sheet-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 25;
+    background: rgba(0, 0, 0, 0.36);
+  }
+</style>

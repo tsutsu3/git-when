@@ -1,0 +1,223 @@
+---
+import { MESSAGES } from "../scripts/report/i18n";
+import { VIEW_IDS } from "../scripts/report/types";
+import HeatmapPanel from "./HeatmapPanel.astro";
+import MonthPanel from "./MonthPanel.astro";
+import TimeZonePanel from "./TimeZonePanel.astro";
+import WeekPanel from "./WeekPanel.astro";
+import WeekdayHoursPanel from "./WeekdayHoursPanel.astro";
+---
+
+<!-- Interactive visualizations share one tabbed report card. -->
+<section class="card">
+  <div class="tabs" role="tablist" data-i18n-attr="aria-label:viewsLabel">
+    {VIEW_IDS.map((view, i) => (
+      <button
+        class="tab"
+        role="tab"
+        id={`tab-${view}`}
+        data-view={view}
+        aria-controls={`p-${view}`}
+        aria-selected={i === 0 ? "true" : "false"}
+        tabindex={i === 0 ? undefined : "-1"}
+        data-i18n={`tab.${view}`}
+      >
+        {MESSAGES.en[`tab.${view}`]}
+      </button>
+    ))}
+  </div>
+
+  <HeatmapPanel />
+  <WeekdayHoursPanel />
+  <WeekPanel />
+  <MonthPanel />
+  <TimeZonePanel />
+</section>
+
+<!--
+  Styles shared by all panels live here. Panel-only styles live in each panel.
+  Styles are global because the script builds the chart elements at runtime,
+  and runtime elements do not get Astro's scoped attributes.
+-->
+<style is:global>
+  /* ------------------------- card / tabs ------------------------- */
+
+  .card {
+    padding: 6px 22px 22px;
+  }
+
+  /* The bottom rule is a box-shadow. A border would need a negative margin under the tab underline,
+   and that 1px would add a vertical scrollbar to the scrolling frame. */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    margin: 0 -6px 18px;
+    padding: 0 6px;
+    box-shadow: inset 0 -1px 0 var(--rule-hair);
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: thin;
+  }
+  .tab {
+    padding: 13px 12px 11px;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    background: none;
+    color: var(--ink-soft);
+    font-size: 13.5px;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .tab:hover {
+    color: var(--ink);
+  }
+  .tab[aria-selected="true"] {
+    color: var(--ink);
+    border-bottom-color: var(--ink);
+    font-weight: 600;
+  }
+
+  .panel-note {
+    width: 100%;
+    margin: 0 0 14px;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    overflow-wrap: anywhere;
+    text-wrap: pretty;
+  }
+  .scroll {
+    overflow-x: auto;
+    padding-bottom: 6px;
+  }
+  /* By month and time zones have one row per year. A long history would make the page very tall,
+     so the frame shows about ten years and scrolls. A row is a 44px cell plus a 3px gap.
+     The extra 26px holds the header row and the horizontal scrollbar. */
+  .scroll.year-rows {
+    max-height: calc(26px + 10 * 47px);
+    overflow-y: auto;
+  }
+  /* The header row stays at the top while the years scroll under it.
+     The shadow paints the gaps, so cells do not show between the headers. */
+  .year-rows .tick,
+  .year-rows .corner {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    background: var(--surface);
+    box-shadow: 0 0 0 3px var(--surface);
+  }
+
+  /* ------------------------- heat cells (heatmap, month, time zones) ------------------------- */
+
+  .cell {
+    aspect-ratio: 1;
+    border-radius: 4px;
+    background: var(--empty);
+    transition: box-shadow 90ms ease;
+  }
+  .cell.l1,
+  .sw.l1 {
+    background: var(--l1);
+  }
+  .cell.l2,
+  .sw.l2 {
+    background: var(--l2);
+  }
+  .cell.l3,
+  .sw.l3 {
+    background: var(--l3);
+  }
+  .cell.l4,
+  .sw.l4 {
+    background: var(--l4);
+  }
+  .cell:hover {
+    position: relative;
+    z-index: 1;
+    box-shadow:
+      0 0 0 2px var(--surface),
+      0 0 0 4px var(--ink);
+  }
+
+  .legend {
+    display: flex;
+    align-items: center;
+    gap: 8px 18px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+    color: var(--ink-soft);
+    font-size: 12px;
+  }
+  .legend-scale {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .sw-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+  }
+  .sw {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border-radius: 4px;
+    background: var(--empty);
+  }
+  .legend-note {
+    color: var(--ink-faint);
+  }
+
+  .tick {
+    align-self: end;
+    color: var(--ink-faint);
+    font-size: 11px;
+    text-align: center;
+  }
+  .rowlabel {
+    display: flex;
+    align-items: center;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+  }
+  .rowlabel.strong {
+    color: var(--ink);
+  }
+  .rowtotal {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    color: var(--ink-soft);
+    font-size: 12px;
+  }
+  .rowtotal.sel {
+    color: var(--ink);
+    font-weight: 650;
+  }
+
+  /* ------------------------- year labels (month, time zones) ------------------------- */
+
+  .row-label {
+    padding: 0 6px 0 0;
+    border: 0;
+    background: none;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+    text-align: left;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+  .row-label:hover {
+    color: var(--ink);
+    text-decoration: underline;
+  }
+  .row-label[aria-pressed="true"] {
+    color: var(--ink);
+    font-weight: 650;
+  }
+  .row-label[aria-pressed="true"]::before {
+    content: "▸ ";
+  }
+</style>

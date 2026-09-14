@@ -1,0 +1,9 @@
+# Generated files
+internal/render/template.html
+pnpm-lock.yaml
+frontend/dist/
+frontend/.astro/
+
+# Local output
+tmp/
+git-when.html

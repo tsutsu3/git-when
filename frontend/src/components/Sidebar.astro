@@ -1,0 +1,216 @@
+<!-- Repository navigation; its list is populated by the client script. -->
+<nav class="roster" id="roster-nav" data-i18n-attr="aria-label:projects">
+  <div class="roster-head">
+    <button class="icon-btn" id="side-collapse" type="button" aria-controls="roster-nav">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true">
+        <rect
+          x="2.5"
+          y="3.5"
+          width="15"
+          height="13"
+          rx="2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+        ></rect>
+        <path
+          d="M7.5 3.5v13M13 8l-2 2 2 2"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.5"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </button>
+    <h2>
+      <span data-i18n="projects">Repositories</span>
+      <span id="roster-count"></span>
+    </h2>
+  </div>
+  <input
+    class="search"
+    id="roster-search"
+    type="search"
+    data-i18n-attr="placeholder:filterPlaceholder;aria-label:filterLabel"
+  />
+  <ul id="roster"></ul>
+</nav>
+
+<style is:global>
+  .shell {
+    display: grid;
+    grid-template-columns: 290px minmax(0, 1fr);
+    align-items: start;
+    max-width: var(--page-max);
+    margin: 0 auto;
+    transition: grid-template-columns 220ms cubic-bezier(0.2, 0, 0, 1);
+  }
+  .shell.side-closed {
+    grid-template-columns: 0 minmax(0, 1fr);
+  }
+  .shell.side-closed .roster {
+    opacity: 0;
+    transform: translateX(-18px);
+    visibility: hidden;
+    pointer-events: none;
+    border-right-color: transparent;
+    transition:
+      opacity 140ms ease,
+      transform 220ms cubic-bezier(0.2, 0, 0, 1),
+      visibility 0s linear 220ms;
+  }
+  .shell:not(.side-ready),
+  .shell:not(.side-ready) .roster {
+    transition: none;
+  }
+
+  /* The heading and filter box stay in place. Only the list scrolls within the screen height. */
+  .roster {
+    position: sticky;
+    top: var(--topbar-h);
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: calc(100vh - var(--topbar-h));
+    padding: 14px 10px 0 20px; /* Lines up the left edge with the top bar toggle. */
+    border-right: 1px solid var(--rule-hair);
+    overflow-x: clip;
+    opacity: 1;
+    transform: translateX(0);
+    visibility: visible;
+    transition:
+      opacity 140ms ease,
+      transform 220ms cubic-bezier(0.2, 0, 0, 1),
+      visibility 0s linear;
+  }
+  .roster-head,
+  .search {
+    flex: 0 0 auto;
+  } /* Do not shrink them when the list is long. */
+  .roster-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 34px;
+    padding: 0 2px 8px 6px;
+  }
+  .roster-head h2 {
+    margin: 0;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ink-soft);
+  }
+  .roster-head h2 span {
+    margin-left: 6px;
+    color: var(--ink-faint);
+    font-weight: 400;
+  }
+  .search {
+    width: 100%;
+    height: 34px;
+    margin: 0 0 8px;
+    padding: 0 10px;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    background: var(--surface);
+    font-size: 13px;
+  }
+  .roster ul {
+    flex: 1 1 auto;
+    min-height: 0;
+    margin: 0 -4px 0 0;
+    padding: 2px 4px 24px 0;
+    list-style: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  .roster-empty {
+    padding: 10px 8px;
+    color: var(--ink-faint);
+    font-size: 12.5px;
+  }
+
+  .proj {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-rows: auto auto;
+    column-gap: 10px;
+    row-gap: 5px;
+    width: 100%;
+    padding: 8px 10px;
+    margin-bottom: 2px;
+    border: 0;
+    border-radius: 8px;
+    background: none;
+    text-align: left;
+    cursor: pointer;
+  }
+  .proj:hover {
+    background: var(--sunk);
+  }
+  .proj[aria-current="true"] {
+    background: var(--surface);
+    box-shadow:
+      inset 0 0 0 1px var(--rule),
+      var(--shadow);
+  }
+  .proj-text {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  .proj-dir,
+  .proj-base {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .proj-dir {
+    font-size: 11px;
+    color: var(--ink-faint);
+  }
+  .proj-base {
+    font-size: 13.5px;
+  }
+  .proj[aria-current="true"] .proj-base {
+    font-weight: 600;
+  }
+  .proj-n {
+    align-self: center;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+  }
+  .proj-bar {
+    grid-column: 1 / -1;
+    height: 3px;
+    border-radius: 2px;
+    background: var(--rule-hair);
+    overflow: hidden;
+  }
+  .proj-bar i {
+    display: block;
+    height: 100%;
+    background: var(--bar);
+    opacity: 0.7;
+  }
+  .proj.all {
+    margin-bottom: 8px;
+  }
+  .proj.all .proj-base {
+    font-weight: 600;
+  }
+  .proj.zero .proj-text,
+  .proj.zero .proj-n {
+    opacity: 0.45;
+  }
+
+  .stage {
+    width: 100%;
+    min-width: 0;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 26px 28px 64px;
+  }
+</style>

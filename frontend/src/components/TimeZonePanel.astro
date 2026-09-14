@@ -1,0 +1,39 @@
+<!-- Year by UTC offset table with the most common offset of each year. -->
+<div class="panel" id="p-tzshift" role="tabpanel" aria-labelledby="tab-tzshift" hidden>
+  <p class="panel-note" data-i18n="note.tzshift"></p>
+  <div class="scroll year-rows">
+    <div id="tzs"></div>
+  </div>
+  <div class="legend" id="tz-legend"></div>
+</div>
+
+<style is:global>
+  .tz {
+    display: grid;
+    gap: 3px;
+    width: max-content;
+  }
+  .tz .tick {
+    padding: 0 0 2px;
+    white-space: nowrap;
+  }
+  .tz .row-label,
+  .tz .corner {
+    position: sticky; /* Keeps the years visible while the table scrolls sideways. */
+    left: 0;
+    z-index: 2;
+    background: var(--surface);
+  }
+  /* The corner sticks to the top and to the left, so it covers both the headers and the years. */
+  .year-rows .tz .corner {
+    z-index: 4;
+  }
+  .tz .top {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+    color: var(--ink-soft);
+    font-size: 12px;
+    white-space: nowrap;
+  }
+</style>

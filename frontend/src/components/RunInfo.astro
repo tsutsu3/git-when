@@ -1,0 +1,52 @@
+<!-- Reproducibility metadata and repository heads. -->
+<footer class="run-info">
+  <details>
+    <summary data-i18n="runInfo">How this report was generated</summary>
+    <div class="run-info-scroll">
+      <div class="cmd mono" id="cmd"></div>
+      <table id="heads"></table>
+    </div>
+  </details>
+</footer>
+
+<style is:global>
+  .run-info {
+    margin-top: 28px;
+    color: var(--ink-soft);
+    font-size: 12.5px;
+  }
+  .run-info summary {
+    cursor: pointer;
+  }
+  .run-info-scroll {
+    max-height: min(360px, 45vh);
+    margin-top: 12px;
+    padding-right: 8px;
+    overflow: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+  .run-info table {
+    margin-top: 12px;
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+  }
+  .run-info td {
+    padding: 4px 18px 4px 0;
+    border-bottom: 1px solid var(--rule-hair);
+  }
+  .run-info td:last-child {
+    color: var(--ink-faint);
+    text-align: right;
+  }
+  .run-info .cmd {
+    padding: 10px 12px;
+    border-radius: 8px;
+    background: var(--sunk);
+    color: var(--ink);
+    font-size: 12px;
+    white-space: pre;
+    overflow-x: auto;
+  }
+</style>

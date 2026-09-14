@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 274" role="img" aria-labelledby="title desc">
+<title id="title">git-when: Year × month</title>
+<desc id="desc">author local time · 2024-01 to 2025-12 · 2209 commits · 4 repositories</desc>
+<metadata>
+git-when dev
+command: git-when src -f svg -v month -o month.svg
+time zone: author
+period: 2024-01 to 2025-12
+filters: bots excluded, merges excluded
+repository: head=2b40390bc59f9a7ff63fc757c10031d9583fb1c7 commits=179 name=notes/til
+repository: head=91c2fa6276c8f2b6ea4665566947241b46ad047a commits=545 name=oss/git-when
+repository: head=80639ee249d0faf0b38175e400ab2d3c827fa66c commits=808 name=work/api-server
+repository: head=c6d3018b12dbef9fbb9b07f48070f1e7f9f6c99a commits=677 name=work/frontend
+</metadata>
+<style>
+text{font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif;font-size:12px;font-variant-numeric:tabular-nums}
+.h1{font-size:18px;font-weight:600}.h2{font-size:14px;font-weight:600}
+text{fill:#1f2328}.m{fill:#57606a}.bg{fill:#faf8f4}.rule{stroke:#c9cdd4}.z{fill:#ece8e1}
+.d1{fill:#ff875f}.d2{fill:#d75f00}.d3{fill:#af0000}.d4{fill:#5f0000}
+@media (prefers-color-scheme:dark){
+text{fill:#f0f3f6}.m{fill:#9da5ae}.bg{fill:#1f2328}.rule{stroke:#3d444d}.z{fill:#2d333b}
+.d1{fill:#af5f00}.d2{fill:#d7875f}.d3{fill:#ffaf5f}.d4{fill:#ffd7af}
+}
+</style>
+<rect class="bg" width="880" height="274"/>
+<text x="24" y="42" class="h1">git-when</text>
+<text x="24" y="60" class="m">author local time · 2024-01 to 2025-12 · 2209 commits · 4 repositories</text>
+<line x1="24" y1="74" x2="856" y2="74" class="rule"/>
+<text x="24" y="98" class="h2">Year × month</text>
+<text x="75" y="118" text-anchor="middle" class="m">1</text>
+<text x="107" y="118" text-anchor="middle" class="m">2</text>
+<text x="139" y="118" text-anchor="middle" class="m">3</text>
+<text x="171" y="118" text-anchor="middle" class="m">4</text>
+<text x="203" y="118" text-anchor="middle" class="m">5</text>
+<text x="235" y="118" text-anchor="middle" class="m">6</text>
+<text x="267" y="118" text-anchor="middle" class="m">7</text>
+<text x="299" y="118" text-anchor="middle" class="m">8</text>
+<text x="331" y="118" text-anchor="middle" class="m">9</text>
+<text x="363" y="118" text-anchor="middle" class="m">10</text>
+<text x="395" y="118" text-anchor="middle" class="m">11</text>
+<text x="427" y="118" text-anchor="middle" class="m">12</text>
+<text x="24" y="139">2024</text>
+<rect x="60" y="124" width="30" height="22" class="d4"><title>2024 1: 92 commits</title></rect>
+<rect x="92" y="124" width="30" height="22" class="d4"><title>2024 2: 104 commits</title></rect>
+<rect x="124" y="124" width="30" height="22" class="d4"><title>2024 3: 102 commits</title></rect>
+<rect x="156" y="124" width="30" height="22" class="d4"><title>2024 4: 100 commits</title></rect>
+<rect x="188" y="124" width="30" height="22" class="d4"><title>2024 5: 88 commits</title></rect>
+<rect x="220" y="124" width="30" height="22" class="d4"><title>2024 6: 101 commits</title></rect>
+<rect x="252" y="124" width="30" height="22" class="d4"><title>2024 7: 99 commits</title></rect>
+<rect x="284" y="124" width="30" height="22" class="d3"><title>2024 8: 50 commits</title></rect>
+<rect x="316" y="124" width="30" height="22" class="d4"><title>2024 9: 87 commits</title></rect>
+<rect x="348" y="124" width="30" height="22" class="d4"><title>2024 10: 99 commits</title></rect>
+<rect x="380" y="124" width="30" height="22" class="d4"><title>2024 11: 96 commits</title></rect>
+<rect x="412" y="124" width="30" height="22" class="d3"><title>2024 12: 52 commits</title></rect>
+<text x="480" y="139" text-anchor="end" class="m">1070</text>
+<text x="24" y="163">2025</text>
+<rect x="60" y="148" width="30" height="22" class="d4"><title>2025 1: 109 commits</title></rect>
+<rect x="92" y="148" width="30" height="22" class="d4"><title>2025 2: 103 commits</title></rect>
+<rect x="124" y="148" width="30" height="22" class="d4"><title>2025 3: 104 commits</title></rect>
+<rect x="156" y="148" width="30" height="22" class="d4"><title>2025 4: 103 commits</title></rect>
+<rect x="188" y="148" width="30" height="22" class="d4"><title>2025 5: 96 commits</title></rect>
+<rect x="220" y="148" width="30" height="22" class="d4"><title>2025 6: 100 commits</title></rect>
+<rect x="252" y="148" width="30" height="22" class="d4"><title>2025 7: 105 commits</title></rect>
+<rect x="284" y="148" width="30" height="22" class="d3"><title>2025 8: 50 commits</title></rect>
+<rect x="316" y="148" width="30" height="22" class="d4"><title>2025 9: 107 commits</title></rect>
+<rect x="348" y="148" width="30" height="22" class="d4"><title>2025 10: 100 commits</title></rect>
+<rect x="380" y="148" width="30" height="22" class="d4"><title>2025 11: 107 commits</title></rect>
+<rect x="412" y="148" width="30" height="22" class="d3"><title>2025 12: 55 commits</title></rect>
+<text x="480" y="163" text-anchor="end" class="m">1139</text>
+<text x="24" y="198" class="m">sqrt scale · max 109 at 2025 1 · empty cells = 0</text>
+<rect x="24" y="208" width="12" height="12" class="d1"/>
+<text x="40" y="218" class="m">1+</text>
+<rect x="70" y="208" width="12" height="12" class="d2"/>
+<text x="86" y="218" class="m">12+</text>
+<rect x="123" y="208" width="12" height="12" class="d3"/>
+<text x="139" y="218" class="m">33+</text>
+<rect x="176" y="208" width="12" height="12" class="d4"/>
+<text x="192" y="218" class="m">66+</text>
+<line x1="24" y1="228" x2="856" y2="228" class="rule"/>
+<text x="24" y="250" class="m">git-when dev · 4 repositories</text>
+</svg>

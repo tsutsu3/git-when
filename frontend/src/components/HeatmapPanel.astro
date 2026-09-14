@@ -1,0 +1,32 @@
+<!-- Weekday by hour heatmap with hourly totals above and weekday totals on the right. -->
+<div class="panel" id="p-heatmap" role="tabpanel" aria-labelledby="tab-heatmap">
+  <p class="panel-note" data-i18n="note.heatmap"></p>
+  <div class="scroll">
+    <div class="hm" id="hm"></div>
+  </div>
+  <div class="legend" id="hm-legend"></div>
+</div>
+
+<style is:global>
+  .hm {
+    display: grid;
+    grid-template-columns: 38px repeat(24, minmax(18px, 44px)) 58px;
+    justify-content: start;
+    gap: 3px;
+    min-width: 600px;
+  }
+  .colbar {
+    display: flex;
+    align-items: flex-end;
+    height: 44px;
+  }
+  .colbar i {
+    display: block;
+    width: 100%;
+    border-radius: 3px 3px 0 0;
+    background: var(--bar-soft);
+  }
+  .colbar:hover i {
+    background: var(--bar);
+  }
+</style>

@@ -1,0 +1,110 @@
+/* The four shading levels (--l1..--l4) use the same xterm-256 colors as the terminal and SVG.
+   Their lightness changes steadily, and even level 1 stands out from the background.
+   Viewers can choose light, dark, or system colors. */
+
+:root {
+  color-scheme: light;
+  --paper: #f6f5f1;
+  --surface: #ffffff;
+  --sunk: #efeee9;
+  --ink: #1c1e21;
+  --ink-soft: #5e6369;
+  --ink-faint: #8b9096;
+  --rule: #dddbd4;
+  --rule-hair: #eae8e2;
+  --focus: #2f6db5;
+  --empty: #eceae4;
+  --l1: #ff875f;
+  --l2: #d75f00;
+  --l3: #af0000;
+  --l4: #5f0000;
+  --bar: #d75f00;
+  --bar-soft: #f6c9b3;
+  --tip-bg: #1c1e21;
+  --tip-ink: #f6f5f1;
+  --shadow: 0 1px 2px rgba(20, 20, 20, 0.04), 0 6px 20px rgba(20, 20, 20, 0.05);
+  --radius: 12px;
+  --topbar-h: 60px;
+  --page-max: 1560px; /* On wider screens, the top bar content and the page are centered. */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --paper: #111315;
+    --surface: #181b1f;
+    --sunk: #1f2328;
+    --ink: #e9e7e2;
+    --ink-soft: #a4a9af;
+    --ink-faint: #737980;
+    --rule: #2e3338;
+    --rule-hair: #24282d;
+    --focus: #8ab8f0;
+    --empty: #23272c;
+    --l1: #af5f00;
+    --l2: #d7875f;
+    --l3: #ffaf5f;
+    --l4: #ffd7af;
+    --bar: #d7875f;
+    --bar-soft: #4a3226;
+    --tip-bg: #e9e7e2;
+    --tip-ink: #111315;
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.25);
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --paper: #111315;
+  --surface: #181b1f;
+  --sunk: #1f2328;
+  --ink: #e9e7e2;
+  --ink-soft: #a4a9af;
+  --ink-faint: #737980;
+  --rule: #2e3338;
+  --rule-hair: #24282d;
+  --focus: #8ab8f0;
+  --empty: #23272c;
+  --l1: #af5f00;
+  --l2: #d7875f;
+  --l3: #ffaf5f;
+  --l4: #ffd7af;
+  --bar: #d7875f;
+  --bar-soft: #4a3226;
+  --tip-bg: #e9e7e2;
+  --tip-ink: #111315;
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  background: var(--paper);
+}
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Noto Sans JP",
+    "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+button,
+input,
+select {
+  font: inherit;
+  color: inherit;
+}
+svg {
+  display: block;
+}
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+[hidden] {
+  display: none !important;
+}

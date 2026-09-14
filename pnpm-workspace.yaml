@@ -1,0 +1,6 @@
+# esbuild checks its platform binary after install.
+# The report does not process images, so sharp does not need to build.
+allowBuilds:
+  esbuild: true
+  sharp: false
+  workerd: true

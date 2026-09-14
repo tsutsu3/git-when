@@ -1,0 +1,146 @@
+---
+import RunInfo from "../components/RunInfo.astro";
+import Overlay from "../components/Overlay.astro";
+import ReportSummary from "../components/ReportSummary.astro";
+import ReportViews from "../components/ReportViews.astro";
+import Sidebar from "../components/Sidebar.astro";
+import TopBar from "../components/TopBar.astro";
+import "../styles/global.css";
+import logo from "../assets/git-when-logo.svg?raw";
+
+// The favicon is inlined as a data URI, so the report stays one offline file.
+const favicon = `data:image/svg+xml,${encodeURIComponent(logo.trim())}`;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Explore when commits happen across Git repositories with interactive heatmaps by hour, weekday, month, author, and time zone."
+    />
+    <title>git-when - commit rhythm</title>
+    <link rel="icon" type="image/svg+xml" href={favicon} />
+  </head>
+  <body>
+    <TopBar />
+
+    <!-- Report layout: repository navigation and report content. -->
+    <div class="shell">
+      <Sidebar />
+      <main class="stage">
+        <ReportSummary />
+        <ReportViews />
+        <RunInfo />
+      </main>
+    </div>
+
+    <Overlay />
+
+    <!-- In astro dev, sample.ts sets sample data before the application script runs. -->
+    {import.meta.env.DEV && <script src="../scripts/sample.ts"></script>}
+    <!-- The template build replaces this marker with the sample data script and the Go data markers. -->
+    <!--@git-when-sample-->
+    <!-- Astro bundles this TypeScript entry point into the one application script. -->
+    <script src="../scripts/template.ts"></script>
+  </body>
+</html>
+
+<style is:global>
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      transition: none !important;
+    }
+  }
+
+  /* Keep 880px in sync with narrowQuery in scripts/template.ts. */
+  @media (max-width: 880px) {
+    .topbar-inner {
+      flex-wrap: wrap;
+      padding: 10px 14px;
+      gap: 10px;
+    }
+    .settings {
+      margin-left: auto;
+    }
+    .filters {
+      order: 3;
+      width: 100%;
+      margin-left: 0;
+    }
+    .field {
+      flex: 1 1 150px;
+    }
+    .field select {
+      flex: 1;
+      max-width: none;
+    }
+
+    /* On narrow screens the repository list becomes a sheet from the left.
+     Side by side, the name column would collapse and leave only the counts. */
+    .shell,
+    .shell.side-closed {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .roster,
+    .shell.side-closed .roster {
+      display: flex;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 30;
+      width: min(330px, 88vw);
+      height: auto;
+      padding: 10px 10px 0 14px; /* Puts the close button where the top bar toggle is. */
+      border-right: 1px solid var(--rule);
+      background: var(--paper);
+      box-shadow: 0 0 28px rgba(0, 0, 0, 0.2);
+      transform: translateX(-105%);
+      visibility: hidden; /* Keeps Tab out of the closed sheet. */
+      transition:
+        transform 160ms ease,
+        visibility 0s linear 160ms;
+    }
+    .shell.sheet-open .roster {
+      transform: none;
+      visibility: visible;
+      transition: transform 160ms ease;
+    }
+    #side-collapse {
+      display: inline-flex;
+    }
+    .roster-head {
+      padding-left: 0;
+    }
+    .stage {
+      padding: 18px 14px 50px;
+    }
+    .lede {
+      font-size: 19px;
+    }
+    .card {
+      padding: 4px 14px 16px;
+    }
+    .kpis {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      min-height: 203px;
+    }
+    .kpi-value {
+      font-size: 21px;
+    }
+  }
+  @media (max-width: 640px) {
+    .tick.minor {
+      visibility: hidden;
+    }
+  }
+</style>
