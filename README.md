@@ -39,10 +39,29 @@ SVG, or CSV data.
 
 ## Install
 
-Download an archive for Linux, macOS, or Windows from
-[GitHub Releases](https://github.com/tsutsu3/git-when/releases).
+### Install script
 
-Or install it with Go 1.21 or newer. If your Go version is older than the version in `go.mod`
+The script installs a released binary on Linux, macOS, and Windows shells such as Git Bash.
+It needs no Go toolchain.
+
+```sh
+curl -fsSL https://raw.githubusercontent.com/tsutsu3/git-when/main/install.sh -o install.sh
+less install.sh
+sh install.sh
+```
+
+Read the script before you run it. It downloads the archive for your platform, checks its SHA-256
+against `checksums.txt`, and installs `git-when` into `~/.local/bin`. Use `--bin-dir DIR` to pick
+another directory and `--version TAG` to install one release.
+
+### Download an archive
+
+Download an archive for Linux, macOS, or Windows from
+[GitHub Releases](https://github.com/tsutsu3/git-when/releases). Windows archives are `.zip` files.
+
+### Go
+
+Install it with Go 1.21 or newer. If your Go version is older than the version in `go.mod`
 (Go 1.27.1), the Go toolchain downloads that version automatically:
 
 ```sh
