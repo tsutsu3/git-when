@@ -24,16 +24,16 @@
 ![Heatmap of commits by weekday and hour](docs/images/examples/svg-heatmap.svg)
 
 `git-when` reads the history of one or more Git repositories and shows the hours and weekdays
-when commits happen. It draws a terminal heatmap, a self-contained HTML report, a static SVG,
-or CSV.
+when commits happen. It can produce a terminal heatmap, a self-contained HTML report, a static
+SVG, or CSV data.
 
 ## Features
 
-- Finds every repository under the directories you give it.
-- Counts commits in the local time recorded in each commit.
-- Shows weekday by hour heatmaps, hourly bars, monthly grids, weekend activity, and time zone
+- Finds every repository under the directories you specify.
+- Counts each commit using the local time recorded in it.
+- Shows weekday-by-hour heatmaps, hourly bars, monthly grids, weekend activity, and time zone
   changes.
-- Writes an HTML report that works offline as one file. You can switch repositories, authors,
+- Writes a single-file HTML report that works offline. You can switch repositories, authors,
   years, views, language, and theme in the browser.
 - Caches `git log` output, so later runs are fast.
 
@@ -42,8 +42,8 @@ or CSV.
 Download an archive for Linux, macOS, or Windows from
 [GitHub Releases](https://github.com/tsutsu3/git-when/releases).
 
-Or install it with Go 1.21 or newer. If your Go is older than the version in `go.mod`
-(Go 1.27.1), Go downloads that version automatically:
+Or install it with Go 1.21 or newer. If your Go version is older than the version in `go.mod`
+(Go 1.27.1), the Go toolchain downloads that version automatically:
 
 ```sh
 go install github.com/tsutsu3/git-when/cmd/git-when@latest
@@ -94,7 +94,7 @@ git-when . --format csv --out git-when.csv
 --version                print the version and exit
 ```
 
-Run `git-when --help` for every option.
+Run `git-when --help` to see all options.
 
 ### Publishing an HTML report
 
@@ -115,8 +115,8 @@ mkdir -p public
 git-when ~/src --format html --default-author tsutsu3 --no-email --out public/index.html
 ```
 
-The recorded command line stays in the report, so do not write an email in a flag such as
-`--author` if you use `--no-email`.
+The recorded command line remains in the report, so do not include an email in a flag such as
+`--author` when using `--no-email`.
 
 ## Output examples
 
@@ -126,14 +126,14 @@ The recorded command line stays in the report, so do not write an email in a fla
 
 ### Static SVG
 
-SVG output is self-contained and fits README files, documents, and slides.
+SVG output is self-contained, making it suitable for README files, documents, and slides.
 
 ![Static SVG report with heatmap, weekday/weekend, and monthly views](docs/images/git-when-report.svg)
 
 ## Documentation
 
-- [Examples](docs/examples.md) shows the output of each view and option.
-- [Specification](docs/spec.md) describes the behavior that users and scripts rely on.
+- See [Examples](docs/examples.md) for the output of each view and option.
+- See [Specification](docs/spec.md) for the behavior that users and scripts rely on.
 
 ## Development
 
@@ -171,7 +171,8 @@ See [architecture.md](docs/architecture.md) for how the code is organized and
 
 The demo is a normal report that a maintainer builds by hand and commits as `public/index.html`.
 It is built locally because the report is more useful when it covers many repositories, and a
-release runner only has this one. The `build:demo` script in `package.json` holds the flags:
+release runner has access only to this repository. The `build:demo` script in `package.json`
+holds the flags:
 
 ```sh
 pnpm build:demo
@@ -208,8 +209,8 @@ amd64 and arm64, and creates a draft GitHub Release with SHA-256 checksums. The 
 touch the demo site. See [Demo site](#demo-site) for that.
 
 To publish the final release, open the `Publish release` workflow in GitHub Actions and choose
-`Run workflow`. It publishes the draft for the version embedded in Go. This is the only step that
-publishes the draft.
+`Run workflow`. It publishes the draft for the version embedded in the Go source. This is the only
+step that publishes the draft.
 
 [releases-shield]: https://img.shields.io/github/v/release/tsutsu3/git-when?style=for-the-badge&logo=github&display_name=release
 [releases-url]: https://github.com/tsutsu3/git-when/releases

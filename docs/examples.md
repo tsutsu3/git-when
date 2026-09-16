@@ -4,18 +4,18 @@ This page shows what each option does, using real output from a small set of
 example repositories. For the full list of options and defaults, see
 [spec.md](spec.md).
 
-- **Terminal images** show the command run in a terminal with
-  `--color always --theme light`. Grids use one orange ramp for every hour.
+- **Terminal images** show commands run in a terminal with
+  `--color always --theme light`. Grids use a single orange color ramp.
 - **SVG images** are the output of the same view with `-f svg`. They follow the
   viewer's light or dark color scheme.
-- **Plain text** is the default output without colors. It is folded under each
-  image. Some Markdown viewers draw the block characters with gaps or misaligned
-  columns, which is why the images come first.
+- **Plain text** is the default output without colors. It appears in a collapsible
+  section below each image. Some Markdown viewers draw the block characters with
+  gaps or misaligned columns, which is why the images come first.
 
 ## Example repositories
 
-The examples run in a directory that contains `src/` with four repositories.
-Commits have fixed dates from 2024-01 to 2025-12.
+The examples run in a directory that contains four repositories under `src/`.
+The commits have fixed dates ranging from 2024-01 to 2025-12.
 
 ```text
 src/
@@ -25,8 +25,8 @@ src/
   notes/til         Carol and Bob, a few notes a week
 ```
 
-Alice, Bob, and Carol record `+09:00`. Dave records `+05:30`. Carol moved to
-San Francisco in 2025-04, so her later commits record `-07:00` and `-08:00`.
+The commits from Alice, Bob, and Carol record `+09:00`. Dave's commits record `+05:30`.
+Carol moved to San Francisco in 2025-04, so her later commits record `-07:00` and `-08:00`.
 
 ## Terminal views
 
@@ -42,7 +42,7 @@ SVG: `git-when src -f svg -o heatmap.svg`
 
 ![SVG heatmap of commits by weekday and hour](images/examples/svg-heatmap.svg)
 
-Bot commits are excluded by default, so the dependabot commits are not counted.
+Bot commits are excluded by default, so the Dependabot commits are not counted.
 
 <details>
 <summary>Plain text output</summary>
@@ -122,7 +122,7 @@ sqrt scale, max 109 at 2025 1 (blank = 0):  ░░ 1+  ▒▒ 12+  ▓▓ 33+  �
 
 ### `--view week`
 
-Weekdays and the weekend share one scale, so a quiet weekend looks quiet.
+Weekdays and the weekend share one scale, making lower weekend activity easy to see.
 
 ```sh
 git-when src --view week
@@ -298,7 +298,7 @@ git-when src --view heatmap,week
 
 SVG: `git-when src -f svg -v heatmap,week -o heatmap-week.svg`
 
-![SVG sheet with the heatmap and the weekday and weekend view](images/examples/svg-heatmap-week.svg)
+![SVG sheet with the heatmap and the weekday-versus-weekend view](images/examples/svg-heatmap-week.svg)
 
 <details>
 <summary>Plain text output (shortened)</summary>
@@ -324,8 +324,8 @@ Mon ░░               │   ░░ ▒▒ ▓▓ ██ ██│▒▒ ▓�
 
 ## Custom grids with `--pivot`
 
-`--pivot y/x` picks any two of `hour`, `wday`, `month`, `year`, `project`, and
-`author`.
+`--pivot y/x` uses any two of `hour`, `wday`, `month`, `year`, `project`, and
+`author` as axes.
 
 ### `--pivot year/hour`
 
@@ -452,8 +452,8 @@ average per weekday 332.8, per weekend day 272.5
 
 ## Shading scales
 
-The default `sqrt` scale is shown above. `linear` shows only the busiest
-cells as dark. `log` makes small counts visible.
+The default `sqrt` scale is shown above. `linear` makes only the busiest
+cells dark. `log` makes low counts easier to see.
 
 ### `--scale linear`
 
@@ -523,7 +523,7 @@ log scale, max 56 at Thu 11 (blank = 0):  ░░ 1+  ▒▒ 4+  ▓▓ 10+  █�
 
 ## Author filters
 
-Filters match anywhere in `Name <email>`. Repositories stay in the table even
+Filters match anywhere in `Name <email>`. Repositories remain in the table even
 when no commit matches.
 
 ```text
@@ -554,8 +554,8 @@ notes/til            179   10.2%        2         14  Mon        0.0%         0.
 total               1752  100.0%        3         15  Mon        7.5%         0.63
 ```
 
-`--bots` counts bot commits too. Here dependabot adds 156 commits and one author,
-and its early morning commits raise the night share.
+`--bots` includes bot commits. Here, the Dependabot author adds 156 commits, and its
+early morning commits increase the night share.
 
 ```text
 $ git-when src --view summary --bots
@@ -573,7 +573,7 @@ total               2365  100.0%        5         15  Mon       12.1%         0.
 
 ## Choosing repositories
 
-Names are relative to the directory you give.
+Repository names are relative to the directory you pass to the command.
 
 ```text
 $ git-when src/work --view summary
@@ -612,7 +612,7 @@ error: no git repositories found under src
 
 ## CSV
 
-Without `-o`, CSV goes to `git-when.csv`. Use `-o -` for stdout.
+Without `-o`, CSV is written to `git-when.csv`. Use `-o -` for stdout.
 
 ```text
 $ git-when src --format csv
@@ -639,20 +639,20 @@ project,author_name,author_email,year,month,weekday,hour,commits
 "notes/til","Carol","carol@example.com",2024,1,5,16,1
 ```
 
-pandas reads it with `pd.read_csv("git-when.csv", comment="#")`.
+You can read it with pandas by using `pd.read_csv("git-when.csv", comment="#")`.
 
 ## SVG files
 
-Without `-o`, all views go into one sheet, `git-when.svg`. SVG supports
-`heatmap`, `hour`, `week`, `month`, and `--pivot`. The SVG images above show
-how each view looks.
+Without `-o`, all selected views go into one sheet, `git-when.svg`. SVG supports
+the `heatmap`, `hour`, `week`, and `month` views, along with custom grids created
+with `--pivot`. The SVG images above show how each view looks.
 
 ```text
 $ git-when src --format svg --view heatmap,week
 wrote git-when.svg
 ```
 
-A directory for `-o` writes one file per view.
+If you pass a directory to `-o`, git-when writes one file per view.
 
 ```text
 $ git-when src --format svg --view all -o svg/ && ls svg
@@ -674,8 +674,8 @@ git-when.all.week.svg
 
 ## HTML
 
-The HTML report is one file with every view. Repository, author, year, view,
-language, and theme are switched in the page.
+The HTML report is a single file containing every view. You can switch the repository,
+author, year, view, language, and theme on the page.
 
 ```text
 $ git-when src --format html -o report.html
@@ -686,7 +686,8 @@ wrote report.html
 
 ## Errors
 
-Invalid combinations stop before any repository is read and exit with code 2.
+Invalid combinations are rejected before any repository is read, and the command exits
+with code 2.
 
 ```text
 $ git-when src --format csv --view week
@@ -702,8 +703,8 @@ $ git-when src --format html -o svg/
 error: --out: svg/ is a directory (only --format svg writes files into a directory)
 ```
 
-A missing directory or a search without repositories exits with code 1. The
-absolute path in the first message is shortened here.
+A missing directory or a search that finds no repositories causes the command to exit
+with code 1. The absolute path in the first message is shortened here.
 
 ```text
 $ git-when missing

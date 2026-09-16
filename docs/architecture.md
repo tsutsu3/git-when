@@ -5,19 +5,19 @@ For the behavior that must not change, see [spec.md](spec.md).
 
 ## Packages
 
-| Package             | Responsibility                                                                                                                                 |
-| ------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------- |
-| `cmd/git-when`      | The command. Flag parsing (`cli.go`), output selection (`output.go`), run metadata and timings (`report.go`), and the overall run (`main.go`). |
-| `internal/discover` | Finds Git repositories under the given directories.                                                                                            |
-| `internal/collect`  | Runs `git log`, parses it, filters authors, and adds commits to the aggregate.                                                                 |
-| `internal/cache`    | Stores `git log` output on disk.                                                                                                               |
-| `internal/model`    | The aggregate data model and its JSON form.                                                                                                    |
-| `internal/axis`     | Folds the aggregate onto two axes to make a grid.                                                                                              |
-| `internal/stats`    | Weekday and weekend splits, the weekend index, summaries, and UTC offsets per year.                                                            |
-| `internal/render`   | Terminal views, CSV, SVG, and the HTML report.                                                                                                 |
-| `internal/progress` | The one-line progress display on stderr.                                                                                                       |
-| `internal/gittest`  | Test helpers that create repositories with known commit dates.                                                                                 |
-| `frontend/`         | The Astro source of the HTML report template.                                                                                                  |
+| Package             | Responsibility                                                                                                                                           |
+| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `cmd/git-when`      | The command, including flag parsing (`cli.go`), output selection (`output.go`), run metadata and timings (`report.go`), and the overall run (`main.go`). |
+| `internal/discover` | Finds Git repositories under the given directories.                                                                                                      |
+| `internal/collect`  | Runs `git log`, parses it, filters authors, and adds commits to the aggregate.                                                                           |
+| `internal/cache`    | Stores `git log` output on disk.                                                                                                                         |
+| `internal/model`    | The aggregate data model and its JSON form.                                                                                                              |
+| `internal/axis`     | Folds the aggregate onto two axes to make a grid.                                                                                                        |
+| `internal/stats`    | Weekday and weekend splits, the weekend index, summaries, and UTC offsets per year.                                                                      |
+| `internal/render`   | Terminal views, CSV, SVG, and the HTML report.                                                                                                           |
+| `internal/progress` | The one-line progress display on stderr.                                                                                                                 |
+| `internal/gittest`  | Test helpers that create repositories with known commit dates.                                                                                           |
+| `frontend/`         | The Astro source of the HTML report template.                                                                                                            |
 
 ## Data flow
 
@@ -32,7 +32,7 @@ Every view reads the same aggregate. History is read only once per run.
 ## Repository discovery
 
 `discover` walks each root with `filepath.WalkDir`.
-A directory is a repository when it has a `.git` directory, a `.git` file with `gitdir:`, or a bare layout.
+A directory is a repository when it has a `.git` directory, a `.git` file with `gitdir:`, or a bare repository layout.
 The walk does not enter a repository or a skipped directory such as `node_modules`.
 It enters a symbolic link only with `--follow-symlinks`.
 A link whose target is inside the root, or overlaps a directory already searched, is skipped so that the walk cannot loop.
@@ -42,7 +42,7 @@ Unreadable directories are reported as warnings and skipped.
 
 `collect` runs `git log --no-merges --use-mailmap` and reads the author date, name, and email.
 The raw output is cached before filtering, so changing `--author` still uses the cache.
-The cache key includes the path, HEAD, the log format, and the work tree `.mailmap`.
+The cache key includes the path, HEAD, the log format, and the working tree's `.mailmap` file.
 A broken cache entry is ignored. The cache never changes results.
 
 ## Aggregate model
@@ -68,17 +68,17 @@ All formats write the run metadata, so a file shows how it was made.
 2. esbuild compiles `sample.ts` into a plain script.
 3. The sample script goes between `<!--@git-when-data-start-->` and `<!--@git-when-data-end-->`.
 4. The bundled application script is inlined, and the HTML is minified.
-5. The build checks the markers, the script count, and that nothing loads from outside.
+5. The build checks the markers, the script count, and that nothing loads from external sources.
 
 The result is committed as `internal/render/template.html` and embedded with `go:embed`.
 At run time, `render.HTML` replaces the marked block with a script that holds the real data.
 
 ## Frontend code
 
-- `frontend/src/scripts/report/` has code without DOM access: types, data loading, aggregation, formatting, and messages. Vitest tests live here.
-- `frontend/src/scripts/ui/` has code that uses the DOM: element lookup, controls, and view drawing.
+- `frontend/src/scripts/report/` contains code that does not access the DOM: types, data loading, aggregation, formatting, and messages. Vitest tests live here.
+- `frontend/src/scripts/ui/` contains code that uses the DOM: element lookup, controls, and view drawing.
 - `frontend/src/scripts/template.ts` is the entry point. It creates the shared `App` object and draws the page.
-- `frontend/src/components/` has one Astro component per page area and per visualization panel. Shared chart CSS is in `ReportViews.astro`.
+- `frontend/src/components/` has one Astro component for each page area and visualization panel. Shared chart CSS is in `ReportViews.astro`.
 
 ## Adding a view
 
