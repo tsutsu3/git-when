@@ -184,9 +184,9 @@ pnpm preview              # serve the demo from a local Worker
 pnpm deploy:prd           # deploy to Cloudflare
 ```
 
-Deploying needs a Cloudflare login, either `pnpm wrangler login` or the `CLOUDFLARE_ACCOUNT_ID`
-and `CLOUDFLARE_API_TOKEN` environment variables. Copy `.env.example` to `.env.prd` to keep the
-production values, because `--env prd` reads that file. No workflow deploys the demo.
+Deploying needs a Cloudflare login. The deploy scripts pass `--profile`, so each environment uses
+its own saved login and its own account. The profile names are `develop` and `production`. No
+workflow deploys the demo.
 
 ## Release
 

@@ -28,10 +28,9 @@ go.work
 go.work.sum
 
 # env file
-# .env.dev and .env.prd can hold Cloudflare tokens, so ignore every variant.
-# .env.example has no values, so it stays in Git.
+# Deploys use wrangler auth profiles, so no .env file is needed.
+# A .env file could still hold Cloudflare tokens, so ignore every variant.
 .env*
-!.env.example
 
 # Editor/IDE
 # .idea/
@@ -47,8 +46,8 @@ git-when.svg
 # wrangler
 # public/index.html is the demo report. It is built by hand and committed.
 /public/*
-!.gitkeep
 !/public/_headers
 !/public/robots.txt
 !/public/index.html
+!/public/404.html
 .wrangler/

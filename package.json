@@ -12,11 +12,11 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "wrangler": "wrangler",
-    "preview": "wrangler dev --env dev",
-    "deploy:dev": "wrangler deploy --env dev",
-    "delete:dev": "wrangler delete --env dev",
-    "deploy:prd": "wrangler deploy --env prd",
-    "delete:prd": "wrangler delete --env prd"
+    "preview": "wrangler dev --env dev --profile develop",
+    "deploy:dev": "wrangler deploy --env dev --profile develop",
+    "delete:dev": "wrangler delete --env dev --profile develop",
+    "deploy:prd": "wrangler deploy --env prd --profile production",
+    "delete:prd": "wrangler delete --env prd --profile production"
   },
   "devDependencies": {
     "@typescript/native": "npm:typescript@^7.0.2",
