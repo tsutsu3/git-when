@@ -167,6 +167,27 @@ go test ./...
 See [architecture.md](docs/architecture.md) for how the code is organized and
 [AGENTS.md](AGENTS.md) for the rules and checks.
 
+### Demo site
+
+The demo is a normal report that a maintainer builds by hand and commits as `public/index.html`.
+It is built locally because the report is more useful when it covers many repositories, and a
+release runner only has this one. The `build:demo` script in `package.json` holds the flags:
+
+```sh
+pnpm build:demo
+```
+
+Review the result, commit it, then deploy it when you want to update the demo:
+
+```sh
+pnpm preview              # serve the demo from a local Worker
+pnpm deploy:prd           # deploy to Cloudflare
+```
+
+Deploying needs a Cloudflare login, either `pnpm wrangler login` or the `CLOUDFLARE_ACCOUNT_ID`
+and `CLOUDFLARE_API_TOKEN` environment variables. Copy `.env.example` to `.env.prd` to keep the
+production values, because `--env prd` reads that file. No workflow deploys the demo.
+
 ## Release
 
 Update the `version` constant in `cmd/git-when/version.go`. Create and push the matching release
@@ -183,9 +204,8 @@ release branch. It verifies the Go and frontend code and tests a release build. 
 from the release branch to `main` after these checks pass.
 
 Merging that pull request tags the merged commit, builds archives for Linux, macOS, and Windows on
-amd64 and arm64, creates a draft GitHub Release with SHA-256 checksums, and deploys the HTML report
-to the Cloudflare production environment. The repository must define the `CLOUDFLARE_ACCOUNT_ID`
-and `CLOUDFLARE_API_TOKEN` Actions secrets.
+amd64 and arm64, and creates a draft GitHub Release with SHA-256 checksums. The release does not
+touch the demo site. See [Demo site](#demo-site) for that.
 
 To publish the final release, open the `Publish release` workflow in GitHub Actions and choose
 `Run workflow`. It publishes the draft for the version embedded in Go. This is the only step that

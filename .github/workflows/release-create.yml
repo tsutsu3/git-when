@@ -16,7 +16,7 @@ concurrency:
 
 jobs:
   create:
-    name: Create draft release and deploy
+    name: Create draft release
     if: >-
       github.event.pull_request.merged == true &&
       startsWith(github.event.pull_request.head.ref, 'release-v')
@@ -148,25 +148,6 @@ jobs:
           cd dist
           sha256sum git-when_*.tar.gz git-when_*.zip > checksums.txt
 
-      - name: Generate the production report
-        run: |
-          mkdir -p build
-          CGO_ENABLED=0 go build \
-            -trimpath \
-            -ldflags="-s -w" \
-            -o build/git-when \
-            ./cmd/git-when
-          build/git-when .. \
-            --format html \
-            --out public/index.html \
-            --max-depth 2 \
-            --min-total 100 \
-            --default-author tsutsu3 \
-            --no-email
-
-      - name: Validate the production deployment
-        run: corepack pnpm exec wrangler deploy --dry-run --env prd
-
       - name: Create or update the draft release
         uses: ncipollo/release-action@v1.21.0
         with:
@@ -182,9 +163,3 @@ jobs:
           tag: ${{ steps.version.outputs.tag }}
           token: ${{ secrets.GITHUB_TOKEN }}
           updateOnlyUnreleased: true
-
-      - name: Deploy to Cloudflare production
-        env:
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-        run: corepack pnpm deploy:prd

@@ -28,7 +28,10 @@ go.work
 go.work.sum
 
 # env file
-.env
+# .env.dev and .env.prd can hold Cloudflare tokens, so ignore every variant.
+# .env.example has no values, so it stays in Git.
+.env*
+!.env.example
 
 # Editor/IDE
 # .idea/
@@ -42,8 +45,10 @@ git-when.csv
 git-when.svg
 
 # wrangler
+# public/index.html is the demo report. It is built by hand and committed.
 /public/*
 !.gitkeep
 !/public/_headers
 !/public/robots.txt
+!/public/index.html
 .wrangler/

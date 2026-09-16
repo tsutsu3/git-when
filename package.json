@@ -8,6 +8,7 @@
     "check:template": "tsc --noEmit && node frontend/build-template.mjs --check",
     "test:template": "vitest run --root frontend",
     "lint:template": "eslint frontend/src",
+    "build:demo": "go run ./cmd/git-when .. --format html --out public/index.html --max-depth 2 --min-total 100 --default-author tsutsu3 --no-email --follow-symlinks",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "wrangler": "wrangler",

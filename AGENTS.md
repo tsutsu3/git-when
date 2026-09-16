@@ -23,6 +23,7 @@ internal/render/       terminal, CSV, SVG, HTML (template.html is generated)
 internal/progress/     progress line on stderr
 internal/gittest/      test helpers that create repositories
 frontend/              Astro source of the HTML report
+public/                the demo site for Cloudflare (index.html is committed)
 docs/                  architecture.md, spec.md, examples.md, images/
 ```
 
@@ -42,6 +43,7 @@ pnpm test:template       # Vitest
 pnpm lint:template       # ESLint, declaration order only
 pnpm build:template      # tsc --noEmit, then writes internal/render/template.html
 pnpm check:template      # fails if template.html is stale
+pnpm build:demo          # writes public/index.html from the parent directory
 pnpm format              # Prettier, writes files
 pnpm format:check        # Prettier, fails if a file is not formatted
 ```
@@ -69,6 +71,10 @@ Run every command from the repository root.
 - `frontend/src/scripts/report/` must not touch the DOM, so Vitest can import it.
   DOM code goes in `frontend/src/scripts/ui/`.
 - Component CSS uses `<style is:global>` because chart elements are created at run time.
+- `public/index.html` is the demo site, not a build output of the release.
+  A maintainer runs `pnpm build:demo` over many repositories and commits the result.
+  The flags live in the `build:demo` script in `package.json`.
+  No workflow builds or deploys it. Do not regenerate it unless the task asks for it.
 - Add every UI text to both `en` and `ja` in `report/i18n.ts`.
 
 ### Code style
