@@ -1,6 +1,7 @@
 # Generated files
 internal/render/template.html
 public/index.html
+CHANGELOG.md
 pnpm-lock.yaml
 frontend/dist/
 frontend/.astro/
