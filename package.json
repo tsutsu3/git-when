@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "@typescript/native": "npm:typescript@^7.0.2",
-    "astro": "^6.4.8",
+    "astro": "^7.3.3",
     "esbuild": "^0.28.2",
     "eslint": "^10.0.0",
     "eslint-plugin-perfectionist": "^5.11.0",
